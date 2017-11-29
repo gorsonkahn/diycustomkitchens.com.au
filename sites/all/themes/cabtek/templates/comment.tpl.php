@@ -1,6 +1,5 @@
 <article class="<?php print $classes . ' ' . $zebra; ?>">
   <header> <?php print render($title_prefix); ?>
-    <h3 class="title"><?php print $title ?></h3>
     <?php print render($title_suffix); ?>
     <?php if ($new) : ?>
     <mark class="new"><?php print drupal_ucfirst($new) ?></mark>

@@ -70,7 +70,12 @@ a:hover{
 KICKSRART OVERRIDES
 */
 body.toolbar #toolbar-home a span {
-	background:none
+		background: transparent url(../logo-menu-diy.png) no-repeat 0 0;
+    display: block;
+    min-height: 40px;
+    text-indent: -9999px;
+    width: 130px;
+    margin: 0;
 }
 /*
 END OF KICKSTART
