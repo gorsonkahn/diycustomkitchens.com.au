@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="backup_migrate.drush.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="crud.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.browser.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.db.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.db.mysql.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.email.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.file.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.ftp.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.nodesquirrel.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="destinations.s3.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="files.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.backup_restore.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.compression.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.encryption.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.statusnotify.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="filters.utils.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="locations.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="profiles.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="schedules.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="sources.archivesource.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="sources.db.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="sources.db.mysql.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="sources.filesource.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+<file name="sources.inc" server="ftp.diycustomkitchens.com.au" local="131612836220000000" remote="131615577600000000" Dst="2" />
+</dwsync>

@@ -34,7 +34,7 @@ a:hover{
 	width:50%;
 }
 #page_top .menu a {
-	padding-left:36px !important ;
+	padding-left:34px !important ;
 }
 .block-login .menu{
 	display:flex;
@@ -43,9 +43,9 @@ a:hover{
 	color:#e74c3c;
 	text-transform:none;
 	font-weight:300;
+	font-size:0.9rem;
 	transition: all ease-in-out .3s;
 	background:5px 50% no-repeat;
-	line-height:0.7rem
 }
 .block-login .menu a:hover {
 	/*background:5px 50% no-repeat #e74c3c;*/
@@ -115,14 +115,12 @@ END OF KICKSTART
 }
 @media screen and (min-width: 40em) {
 	#page_top .menu a {
-		padding:0.5rem 0.5rem 0.5rem 36px !important ;
+		padding:0.6rem 0.5rem 0.5rem 32px !important ;
 		line-height:1.2rem
 	}
 	.block-top-cart .line-item-summary{
 		font-size:1rem
-		
 	}
-
 }
 
 /* HEADER BAR */
@@ -143,7 +141,7 @@ END OF KICKSTART
 	background :#323a45;
 }
 .responsive-menu-toggle-icon {
-	background:#ff0000 !important
+	
 }
 .main-menu,
 .sub-menu{
@@ -151,6 +149,9 @@ END OF KICKSTART
 	flex-flow: row wrap;
 	background: #323a45;
 	width:100%;
+}
+.sub-menu{
+	background:none
 }
 .menu a,
 .sub-menu a {
@@ -180,7 +181,7 @@ body .menu li {
 	list-style: none;
 }
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1.3em;
+	line-height: 1.25em;
 }
 h1 {
 	font-size: 2.2em;
@@ -374,25 +375,26 @@ PRICE FIELD
 */
 .page-node .field-name-commerce-price .field-items{
 	font-size:1.2rem;
-	padding-left:1.7rem;
-	background:url(../images/optimized/icon-tag.png) no-repeat 5px 0;
+	padding-left:22px;
+	background:url(../images/optimized/icon-tag.png) no-repeat 0 0;
 	background-size:contain;
 	color:#fff;
 	font-weight:bold;
 	position:fixed;
 	bottom:2px;
 	right:2px;
-	z-index:1000
+	z-index:1000;
+	max-width:50%
 }
 @media screen and (min-width: 375px) {
 	.page-node .field-name-commerce-price .field-items{
-		bottom: 40%;
-		font-size:2rem;
+		bottom: 35%;;
+		font-size:1.5rem
 	}
 }
 .page-node .field-name-commerce-price .field-item{
 	background-color:#e74c3c;
-	padding:0.3em 0.5rem 0.4rem .3rem;
+	padding:0.3em 0.5rem 0.4rem 12px;
 	line-height:2rem;
 }
 .page-node .field-name-field-price-markup{
@@ -428,15 +430,19 @@ PRICE FIELD
 
 @media screen and (min-width: 40em) {
 	.section-products #content-area article  {
-		display:flex
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;
 	}
 	.section-products #content-area article .grid-14{
-		width:50%;
-		margin-right:1rem;
+		width:49%;
 	}
 	.section-products #content-area article .grid-8{
-		width:50%
+		width:49%
 	}
+}
+.grid-24 {
+	width:100%
 }
 .form-item-attributes-field-material-finish .form-radios{
 	display:flex
@@ -459,9 +465,8 @@ PRICE FIELD
 ADD TO CART CONFIRMATION MESSAGE
 */
 div.messages.commerce-add-to-cart-confirmation {
-	/*background-color: #e74c3c;*/
+	background-color: #323a45;
 	border:none;
-	border: 1px solid #323a45;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -469,32 +474,42 @@ div.messages.commerce-add-to-cart-confirmation {
 	-webkit-box-shadow: 0 2px 15px #57595a;
 	box-shadow: 0 2px 15px #57595a;
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#57595A', direction='180', strength='5');
-	color: #333;
-	width:60%;
-	min-width:350px;
-	left: 40%;
+	color: #fff;
 	overflow:visible;
-	padding: 0 0 10px 0;
+	padding: 0;
 	position: absolute;
 	z-index: 201;
+	top: 25%;
+	width:20rem;
+	left: 0;
+	right:0;
+	margin:0 auto !important;
 }
-@media screen and (max-width: 40em) {
+@media screen and (min-width: 40em) {
 	div.messages.commerce-add-to-cart-confirmation {
-		left:20%
+		width:35rem;
 	}
+}
+div.messages.commerce-add-to-cart-confirmation .message-inner .added-product-title {
+	text-transform:none;
+	color: #30B41D;
+	font-size:1rem;
+	text-align:left;
+	padding:0.5rem 0.75rem
 }
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
 	background:#323a45;
-	height: 100%;
 	padding: 10px;
-	position: absolute;
-	right: 0;
-	width: 35%;
+	position:absolute;
+	width:40%;
+	right:0;
 }
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button {
 	height:48%;
-	opacity:0.8;
-	padding-top:2.5rem
+	opacity:0.9;
+}
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.checkout {
+	background-color:#30B41D
 }
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.continue {
 	background-color:#e74c3c
@@ -513,12 +528,17 @@ div.messages.commerce-add-to-cart-confirmation .message-inner a.commerce-add-to-
 	right: -24px;
 	top: -24px;
 }
-div.messages.commerce-add-to-cart-confirmation .message-inner .added-product-title{
-	text-align:left
+div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
+	padding:0 0.75rem
 }
-div.messages.commerce-add-to-cart-confirmation .message-inner h2{
-	font-size:1.6rem;
-	padding-bottom:1rem
+div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total {
+	margin:1rem 0 0.5rem 0;
+}
+div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content .views-field-commerce-total span {
+	margin:0.5rem 0 1rem 0;
+	font-weight:bold;
+	width:100%;
+	font-size:1.4rem
 }
 .field-name-commerce-customer-shipping {
 	margin-top:1rem
@@ -538,40 +558,73 @@ FLEXSLIDER
 .flex-direction-nav a {
   width: 40px;
   height: 60px;
+	top:40%
 }
 .flex-direction-nav a:before {
 	line-height:60px;
 	height:60px;
 	font-size:60px
 }
+#mat-slider .slides li {
+	position:relative;
+	display:block;
+	cursor:pointer
+}
+#mat-slider .slides li img{
+	height:auto
+}
+#mat-slider .slides li span {
+	position:absolute;
+	display:block;
+	left:0;
+	top:-100%;
+	line-height:1rem;
+	color:#fff;
+	background:rgba(50,58,60,0.6);
+	transition:all .5s ease;
+	padding:0.2rem;
+	font-size:0.8rem;
+	height:100%;
+}
+#mat-slider .slides li:hover span {
+	top:0;
+}
 .slider-item h3{
 	position:relative;
-	background: rgba(255,255,255,0.5);
-	bottom:7rem;
+	/*background: linear-gradient(to right, #3B4552, #323A45);*/
+	bottom:0;
 	display:block;
-	width:90%;
 	padding:0.2em 0.4em;
+	text-align:center;
+	margin:0;
 	left:0;
-	font-size:32px;
-	color:#333;
+	font-size:2rem;
+	
 	font-weight:normal;
-	border-top-right-radius:8px;
-	border-bottom-right-radius:8px
 }
-.flex-control-nav {
+.flexslider .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: 6rem;
+  bottom: 4rem;
   text-align: center;
 }
 .front .field-name-body {
 	position:relative;
 	top:-9rem
 }
-.optionset-material-block li a img {
+.optionset-material-block li img {
 	min-height:100px
 }
-
+.view-material-block-display .view-footer {
+	border-top:4px solid #323a45
+}
+.view-material-block-display .view-footer p{
+	background:#323a45;
+	color:#fff;
+	font-weight:bold;
+	padding:0.25rem 1rem 0.25rem 0.5rem;
+	display:inline-block
+}
 /*
 END OF FLEXSLIDER
 */
@@ -635,7 +688,7 @@ FOOTER
 #footer {
 	clear:both;
 	color:#bdc3c7;
-	background: #323a45;
+	background: linear-gradient(to bottom right, #3B4552, #323A45);
 	padding: 0 0 45px 0;
 }
 #footer .nolink {
@@ -677,4 +730,10 @@ AJAX PROGRESS THROBBER OVERRIDE
 	display:block;
   height: 24px;
   width: 24px;
+}
+
+.how-to img {
+	max-width:100%;
+	height:auto;
+	margin-bottom:1rem
 }

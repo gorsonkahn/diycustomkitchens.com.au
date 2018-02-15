@@ -39,6 +39,9 @@
   <!-- ______________________ MAIN _______________________ -->
   
   <div id="main">
+  	<?php if ($page['content_super']): ?>
+    	<div class="content-super"><?php print render($page['content_super']); ?></div>
+    <?php endif; ?>
     <div class="container">
       <section id="content">
         <?php if ($breadcrumb || $title|| $messages || $tabs || $action_links): ?>

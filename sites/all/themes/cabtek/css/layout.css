@@ -52,7 +52,7 @@ a#logo span{
 END OF HEADER
  */
 .container {
-  max-width: 68em;
+  max-width: 68rem;
   margin: 0 auto;
   width: auto;
 }
@@ -60,6 +60,16 @@ END OF HEADER
   padding: 1.5rem 1rem 1rem 1rem;
   min-height:20rem;
 }
+.block-gallery {
+	width: 99.5vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
 @media screen and (min-width: 45em) {
   #header .container {
     display:flex;

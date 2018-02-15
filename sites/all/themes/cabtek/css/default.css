@@ -49,18 +49,6 @@ FORMS
 	font-weight:300;
 	border-radius:4px;
 }
-.comment-wrapper .indented {
-	border-left:0.5rem solid #eee;
-	margin-left:1rem;
-	padding:0 0 0.5rem 1rem
-}
-.comment ul.links li{
-	padding:0
-}
-.comment ul.links li a {
-	padding:5px 18px;
-	
-}
 .form-submit:hover,
 .checkout-buttons .checkout-cancel:hover,
 .checkout-buttons .checkout-back:hover,
@@ -72,13 +60,29 @@ FORMS
 #edit-submit.form-submit {
 	margin-right:0.5rem
 }
-#comment-form .form-item-name {
-	display:none
+.comments .comment {
+	display:block;
+	margin:1rem 0;
+	background:#f6f6f6;
+	padding:0.5rem 1rem 0.8rem 0.8rem
 }
-.comments .submitted {
+.comment .submitted {
 	font-style:italic;
-	font-size:0.8rem
+	font-size:0.8rem;	
 }
+.comment-wrapper .indented {
+	border-left:0.5rem solid #ddd;
+}
+.comment ul.links li{
+	padding:0
+}
+.comment ul.links li a {
+	padding:0.1rem 1rem;
+	line-height:2rem;
+	display:inline-block;
+	margin:0.25rem 0 0 0
+}
+
 /*
 TABS
 */
@@ -146,34 +150,49 @@ VIEWS
 }
 .view .pager {
 	margin-top:2rem;
-	text-align:center
+	display:flex;
+	justify-content:center;
+	align-items:center
 }
 .view .pager li{
-	margin:0 4px;
+	margin:0 0.25rem;
 	padding:0;
-	display:none
 }
 .view .pager li.pager-item,
-.view .pager li.pager-current{
-	display:inline-block
-}
-.view .pager li a{
-	/*background: #34495e;*/
-	border:1px solid #e74c3c;
-	display:block;
-	color: #e74c3c;
-	padding:0.3rem 0.8rem;
+.view .pager li.pager-current {
 	transition: all 0.3s ease;
 	font-weight:bold;
-	border-radius:4px;
+}
+.view .pager li a {
+	display:block;
+	padding:0.5rem 1rem;
+	border-radius:0.25rem;
+	border:1px solid #fff
 }
 .view .pager li a:hover{
+	border-color: #e74c3c;
 	background: #e74c3c;
 	color:#fff
 }
 .view .pager li.pager-current {
-	padding:0.1rem 0.3rem;
+	padding:0.5rem 1rem;
+	border-radius:0.25rem;
+	color:#e74c3c;
+	display:block;
+	border:1px solid #e74c3c;
 }
+/*
+CART VIEWS
+*/
+.view-commerce-cart-form .views-field-nothing span {
+	font-size:0.85rem;
+	background:#323a45;
+	display:inline-block;
+	color:#fff;
+	padding:0 0.25rem;
+	margin:2px 2px 0 0
+}
+
 /*
 EVENT SLIDER
 */
@@ -278,34 +297,44 @@ VIEW MATERIALS
 	flex:0 1 auto;
 	transition: all .3s ease;
 	margin:0 4px 4px 0;
-	position:relative;
+	font-size:0.8rem
 }
 .view-materials .view-content div:hover {
 	transform: scale(1.1);
 	z-index:100
 }
+.view-materials .view-content div a {
+	display:block;
+	position:relative
+}
+.view-materials .view-content div a img{
+	width:100%;
+	height:auto;
+	display:block
+}
+.view-materials .view-content div a span{
+	color:#fff;
+	background:#323a45;
+	display:block;
+	padding:0.2rem 0.5rem;
+	width:100%;
+	position:absolute;
+	top:0.5rem;
+	font-size:0.8rem;
+	line-height:1rem;
+	font-weight:bold
+}
+.view-materials .view-content div a span em{
+	font-weight:normal
+}
+
 @media screen and (min-width: 45em) {
 	.view-materials .view-content div{
-		width:19%
+		width:19%;
+		font-size:0.9rem
 	}
 }
 .view-materials .view-content div img{
 	width:100%;
 	height:100%;
-}
-.material-title{
-	font-size:0.8rem;
-	padding:0.2rem;
-	line-height:1rem;
-	min-height:2.5rem;
-	position:absolute;
-	bottom:0;
-	width:100%;
-	background:#fff;
-	color:#323a45;
-}
-/*MATERIALS FOOTER*/
-.footer-super .slides li {
-	border-right:4px solid #fff;
-	position:relative
 }

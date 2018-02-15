@@ -7,6 +7,7 @@ engine = phptemplate
 
 regions[page_first] = Page first
 regions[header] = Header
+regions[content_super] = Content super
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[content] = Content
