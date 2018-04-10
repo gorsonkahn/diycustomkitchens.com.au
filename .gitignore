@@ -38,7 +38,7 @@ xmlrpc.php
 /modules
 !/sites/all/modules/
 /profiles
-!/profiles/commercer_kickstart/modules/
+!/profiles/commerce_kickstart/modules/
 /scripts
 /themes
 sites/all/modules/*/_notes/
