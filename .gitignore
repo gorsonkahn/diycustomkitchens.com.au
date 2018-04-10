@@ -41,3 +41,8 @@ xmlrpc.php
 !/profiles/commercer_kickstart/modules/
 /scripts
 /themes
+sites/all/modules/*/_notes/
+
+sites/all/modules/backup_migrate/tests/_notes/
+
+sites/all/modules/*/dwsync\.xml

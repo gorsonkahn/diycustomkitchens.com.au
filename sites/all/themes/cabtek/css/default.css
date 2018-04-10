@@ -165,7 +165,7 @@ VIEWS
 }
 .view .pager li a {
 	display:block;
-	padding:0.5rem 1rem;
+	padding:0.25rem .75rem;
 	border-radius:0.25rem;
 	border:1px solid #fff
 }
@@ -175,7 +175,7 @@ VIEWS
 	color:#fff
 }
 .view .pager li.pager-current {
-	padding:0.5rem 1rem;
+	padding:0.25rem 0.75rem;
 	border-radius:0.25rem;
 	color:#e74c3c;
 	display:block;

@@ -1,0 +1,17 @@
+/* CSS Document */
+
+
+#main {
+	color:#444
+}
+
+h1 {
+	display:inline-block;
+	background:#e74c3;
+	padding:1rem;
+	border: 10px solid #e74c3 !important
+}
+.view-order-status a {
+	display:inline-block;
+	background:#006699
+}

@@ -32,8 +32,9 @@
   </head>
   <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
     <div id="center">
-      <div id="main">
-      xxx
+    <h3 style="background-color:#006699; color:#fff; border-radius:4px; padding:4px 8px; float:right; display:block">DIY Custom Kitchens</h3>
+      <div id="main" style="clear:both">
+      	
         <?php print $body ?>
       </div>
     </div>
