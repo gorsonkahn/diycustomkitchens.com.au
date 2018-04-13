@@ -296,7 +296,7 @@ VIEW MATERIALS
 	width:48%;
 	flex:0 1 auto;
 	transition: all .3s ease;
-	margin:0 4px 4px 0;
+	
 	font-size:0.8rem
 }
 .view-materials .view-content div:hover {
@@ -314,12 +314,13 @@ VIEW MATERIALS
 }
 .view-materials .view-content div a span{
 	color:#fff;
-	background:#323a45;
+	background:rgb(50,58,69, 0.8);
 	display:block;
 	padding:0.2rem 0.5rem;
-	width:100%;
+	width:95%;
 	position:absolute;
-	top:0.5rem;
+	top:2.5%;
+	left:2.5%;
 	font-size:0.8rem;
 	line-height:1rem;
 	font-weight:bold

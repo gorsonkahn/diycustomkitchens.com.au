@@ -5,6 +5,6 @@
 <file name="commerce_cart.info.inc" server="ftp.diycustomkitchens.com.au" local="131678297992275023" remote="131636727000000000" Dst="1" />
 <file name="commerce_cart.install" server="ftp.diycustomkitchens.com.au" local="131678297997507822" remote="131636727000000000" Dst="1" />
 <file name="commerce_cart.rules.inc" server="ftp.diycustomkitchens.com.au" local="131678297997777888" remote="131636727000000000" Dst="1" />
-<file name="commerce_cart.module" server="ftp.diycustomkitchens.com.au" local="131678298000616430" remote="131636727000000000" Dst="1" />
 <file name="commerce_cart.rules_defaults.inc" server="ftp.diycustomkitchens.com.au" local="131678298003881569" remote="131636727000000000" Dst="1" />
+<file name="commerce_cart.module" server="ftp.diycustomkitchens.com.au" local="131678307125807820" remote="131678239800000000" Dst="1" />
 </dwsync>
