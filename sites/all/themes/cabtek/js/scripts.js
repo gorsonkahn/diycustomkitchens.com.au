@@ -16,6 +16,8 @@
 			// All our js code here
 			// code here will be executed on page load
 			
+			
+			//FUNCTION TO UPDATE MATERIAL SELECT LIST VIA MAT SLIDER IMAGE CLICK			
       $('#mat-slider ul.slides li img').click(function() {
 				var $id = $(this).data('val');
 				$("#edit-line-item-fields-field-external-material-und").val($id);

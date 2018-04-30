@@ -59,8 +59,9 @@ function _commerce_line_item_ajax_recalculate_line_item_field_refresh($form, &$f
   // Determine the appropriate class wrappers to use when replacing the price.
   $replacement_class = drupal_html_class(implode('-', array($form_state['context']['class_prefix'], 'product', 'commerce_price')));
 
+	//EMPIRE: ADDING ADDITIONAL CLASS TO SHOW PRICE TAG AFTER AJAX CALC
   $classes = array(
-    'commerce-product-field',
+    'price-updated commerce-product-field',
     drupal_html_class('commerce-product-field-' . 'commerce_price'),
     drupal_html_class('field-' . 'commerce_price'),
     $replacement_class,
