@@ -46,3 +46,5 @@ sites/all/modules/*/_notes/
 sites/all/modules/backup_migrate/tests/_notes/
 
 sites/all/modules/*/dwsync\.xml
+
+sites/example\.sites\.php

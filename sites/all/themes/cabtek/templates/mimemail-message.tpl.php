@@ -20,23 +20,23 @@
  */
 ?>
 <html>
-  <head>
+    <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?php if ($css): ?>
     <style type="text/css">
-      <!--
-      <?php print $css ?>
-      -->
-    </style>
+			<?php print $css ?>
+			body {
+				border: 1px solid #ccc;
+				border-radius:4px;
+				padding: 1.5rem 2rem 2rem 2rem
+			}
+		</style>
     <?php endif; ?>
-  </head>
-  <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
+    </head>
+    <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
     <div id="center">
-    <h3 style="background-color:#006699; color:#fff; border-radius:4px; padding:4px 8px; float:right; display:block">DIY Custom Kitchens</h3>
-      <div id="main" style="clear:both">
-      	
-        <?php print $body ?>
-      </div>
+      <h3 style="background-color:#e74c3c; color:#fff; border-radius:4px; padding:4px 8px; float:right; display:block">DIY Custom Kitchens</h3>
+      <div id="main" style="clear:both"> <?php print $body ?> </div>
     </div>
-  </body>
+</body>
 </html>

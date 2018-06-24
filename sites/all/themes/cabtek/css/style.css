@@ -660,7 +660,6 @@ FLEXSLIDER
 	width:100px;
 	cursor:pointer;
 	border-left:4px solid #323a45;
-
 }
 #mat-slider .slides li img{
 	width:auto;
@@ -862,7 +861,21 @@ BOOKS
 	padding:0;
 }
 .block-book .menu li {
-	padding-left: 0.25rem
+	padding: 0 0 0 0.5rem;
+	margin: 0
+}
+.block-book .menu li.collapsed > a::before,
+.block-book .menu li.expanded > a::before {
+	margin-left: -1rem;
+	display:inline-block;
+	boder:1px solid #ff0000;
+	width: 1rem
+}
+.block-book .menu li.expanded > a::before {
+	content: "-";
+}
+.block-book .menu li.collapsed > a::before {
+	content: "+";
 }
 .book-navigation a,
 .block-book a{
@@ -870,6 +883,9 @@ BOOKS
 	color: #e74c3c;
 	font-weight:bold;
 	padding:0.5rem 0.75rem
+}
+.block-book .menu a.active {
+	color:#666
 }
 .book-navigation a:hover,
 .block-book a:hover{

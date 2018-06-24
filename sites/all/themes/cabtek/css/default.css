@@ -100,6 +100,10 @@ div.grippie {
 .create-account {
 	margin-bottom:3rem
 }
+.create-account a.login-register{
+	margin-top: 1rem;
+	display:inline-block;
+}
 
 /*
 TABS
@@ -192,7 +196,7 @@ VIEWS
 }
 .view .pager li a:hover{
 	border-color: #e74c3c;
-	background: #e74c3c;
+	background-color: #e74c3c;
 	color:#fff
 }
 .view .pager li.pager-current {
@@ -201,6 +205,29 @@ VIEWS
 	color:#e74c3c;
 	display:block;
 	border:1px solid #e74c3c;
+}
+.view .pager .pager-first,
+.view .pager .pager-last {
+	display:none
+}
+.view .pager .pager-previous a,
+.view .pager .pager-next a{
+	background-repeat: no-repeat;
+	background-size:contain;
+	height:1.5rem;
+	border:none;
+}
+.view .pager .pager-previous a{
+	background-image:url(../images/optimized/pager-left.png)
+}
+.view .pager .pager-next a{
+	background-image:url(../images/optimized/pager-right.png)
+}
+.view .pager .pager-previous a:hover ,
+.view .pager .pager-next a:hover {
+	background-color:transparent;
+	opacity:0.8
+	
 }
 /*
 CART VIEWS
