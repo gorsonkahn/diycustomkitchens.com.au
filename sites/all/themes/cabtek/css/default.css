@@ -164,9 +164,6 @@ ul.tabs.secondary li a {
 /***
 VIEWS
 */
-#content-area .view {
-	margin-bottom:3rem
-}
 #header-region .form-submit {
 	margin: 0
 }
@@ -213,9 +210,11 @@ VIEWS
 .view .pager .pager-previous a,
 .view .pager .pager-next a{
 	background-repeat: no-repeat;
-	background-size:contain;
-	height:1.5rem;
-	border:none;
+	background-size: contain;
+	background-position:center;
+	height:2rem;
+	width: 2rem;
+	opacity:0.8
 }
 .view .pager .pager-previous a{
 	background-image:url(../images/optimized/pager-left.png)
@@ -226,8 +225,7 @@ VIEWS
 .view .pager .pager-previous a:hover ,
 .view .pager .pager-next a:hover {
 	background-color:transparent;
-	opacity:0.8
-	
+	opacity:1
 }
 /*
 CART VIEWS
@@ -247,14 +245,16 @@ CART VIEWS
 	margin:0 0.2rem 0.2rem 0;
 }
 .cart-footer {
-	background:#323a45;
+	background:#bbee77;
 	border-radius:4px;
 	text-align:center;
 	padding:0.5rem;
 	margin-top:1rem;
 	font-size:0.9rem;
-	color:#fff;
 	font-weight:bold;
+}
+.views-table.cols-6 td{
+	vertical-align:middle;
 }
 
 /*
