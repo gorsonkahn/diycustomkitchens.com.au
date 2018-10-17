@@ -1,6 +1,8 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
+*/_notes/*
+
 # Ignore paths that contain generated content.
 files/
 sites/*/files
@@ -41,10 +43,8 @@ xmlrpc.php
 !/profiles/commerce_kickstart/modules/
 /scripts
 /themes
-sites/all/modules/*/_notes/
 
-sites/all/modules/backup_migrate/tests/_notes/
-
-sites/all/modules/*/dwsync\.xml
-
+sites/all/modules/*/_notes*
+sites/all/modules/*/*/_notes*
+sites/all/modules/*/*/*/_notes*
 sites/example\.sites\.php

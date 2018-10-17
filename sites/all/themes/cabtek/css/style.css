@@ -444,8 +444,13 @@ PRODUCT DISPLAY
 	max-width: 100%
 }
 /*
-PRICE FIELD
+PRICE FIELD / s
 */
+
+.field-commerce-price  {
+	/*hide dislpay until a width field has value, or there are no mat fields*/
+	display:none
+}
 .page-node .field-name-commerce-price .field-items{
 	font-size:1.2rem;
 	padding-left:22px;
@@ -542,6 +547,10 @@ PRICE FIELD
 	}
 }
 
+.field-name-field-producttypename {
+	display:none
+}
+
 /*
 ADD TO CART CONFIRMATION MESSAGE
 */
@@ -604,7 +613,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
 	display:block;
 	width:100%;
 	height:100% !important; 
-	padding: 22.5% 10% 10% 10%;
+	padding: 22.5% 0.5rem 0 .5rem;
 	opacity:0.8;
 	border-radius:0
 }
@@ -905,8 +914,4 @@ BOOKS
 	display:block;
 	font-size:0.8rem;
 	line-height:0.8rem;
-}
-
-.field-commerce-price  {
-	display:none
 }

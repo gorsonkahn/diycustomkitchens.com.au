@@ -210,11 +210,11 @@ VIEWS
 .view .pager .pager-previous a,
 .view .pager .pager-next a{
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 45%;
 	background-position:center;
 	height:2rem;
 	width: 2rem;
-	opacity:0.8
+	opacity:0.8;
 }
 .view .pager .pager-previous a{
 	background-image:url(../images/optimized/pager-left.png)
@@ -329,7 +329,7 @@ PRODUCTS AND ALL PRODUCTS VIEWS
 	background:rgba(246,246,246,1);
 	color:#666;
 	padding:0 0.3rem;
-	margin-left:2px
+	margin-left: .5rem
 }
 .product-view-item h2{
 	font-size:1.2rem;

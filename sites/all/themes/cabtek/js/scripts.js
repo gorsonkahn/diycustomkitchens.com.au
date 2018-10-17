@@ -1,12 +1,4 @@
 
-//# sourceMappingURL=scripts.map
-
-//function mat_ext_update($id){
-//	alert ('xxx');
-//	$("#edit-line-item-fields-field-external-material-und").val($id);
-//}
-
-
 (function ($) {  
 
   Drupal.behaviors.cabtek = {
@@ -35,30 +27,33 @@
 				$.colorbox.close();
 			});
 			
-			//SHOW PRICE FOR LINE ITEMS WITH MAT FIELDS AND A VALUE IS SELECTED
-			function showPrice(elem){
-				//TEST IF FIELD EXISTS THEN TEST FOR A SELECTED VALUE
-				if (elem.length) {
-					if (elem.val() != '_none') {
-						$('.field-commerce-price').show();
-					}
-				}
-			}
-			var ext_field = $("#edit-line-item-fields-field-external-material-und");
-			var int_field = $("#edit-line-item-fields-field-internal-material-und")
+			// ***
+			// SHOW PRICE FIELD CHECKS
+			// ***
 			
-			//TEST BOTH FIELDS USING THE FUNCTION ABOVE
-			if ( (ext_field.length) || (int_field.length) ) {
-				
-				//THERE IS A MAT FIELD SO RUN THE TESTS
-				showPrice(ext_field);
-				showPrice(int_field);
-			} 
-			else {
-				
-				//NEITHER MAT FIELD EXISTS SO SHOW PRICE FIELD
+			function showPrice(){
 				$('.field-commerce-price').show();
 			}
+			//FOR LENGTHS (KICKBOARDS) CHECK FOR A HEIGHT VALUE
+			if($('body').hasClass('node-type-length')) {
+				if ($("#edit-line-item-fields-field-height-und-0-value").val() > 0){
+					showPrice();
+				}
+			}
+			if($('body').hasClass('node-type-product-display')) {
+				showPrice();
+			}			
+			if ($("#edit-line-item-fields-field-width-und-0-value").val() > 0){
+				showPrice();
+			}
+			if ($(".field-name-commerce-price").text() === "$0.00") {
+				$('.field-commerce-price').hide();
+			}
+			
+			
+			//ADD PRODUCT CAT VALUE TO LINE ITEM FOR USE BY ORDER EXPORT
+			var product_cat = $(".field-name-field-product-category").text();
+			$("#edit-line-item-fields-field-producttypename-und-0-value").val(product_cat);
 			
 		// end our js code
 		}
