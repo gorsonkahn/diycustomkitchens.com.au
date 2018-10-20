@@ -53,7 +53,11 @@
 			
 			//ADD PRODUCT CAT VALUE TO LINE ITEM FOR USE BY ORDER EXPORT
 			var product_cat = $(".field-name-field-product-category").text();
-			$("#edit-line-item-fields-field-producttypename-und-0-value").val(product_cat);
+			$("#edit-line-item-fields-field-ez-category-text-und-0-value").val(product_cat);
+			
+			//ADD HINGE VALUE TO LINE ITEM FOR USE BY ORDER EXPORT
+			var hinge_cat = $(".field-name-field-ez-hinge-category").text();
+			$("#edit-line-item-fields-field-ez-hinge-text-und-0-value").val(hinge_cat);
 			
 		// end our js code
 		}
