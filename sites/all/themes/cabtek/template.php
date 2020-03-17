@@ -291,6 +291,6 @@ function cabtek_menu_local_tasks(&$variables) {
 function cabtek_form_alter(&$form, $form_state, $form_id) {
 	if (strpos($form_id, 'commerce_cart_add_to_cart_form_') !== false) {
   //if ($form_id === 'commerce_cart_add_to_cart_form_1810') { 
-			$form['quantity']['#description'] = '<b>* Price shown is per unit and is updated based on your selection.</b>';
+			$form['quantity']['#description'] = '<b>* Price shown is per unit and is updated based on your selections.</b>';
     }
 }

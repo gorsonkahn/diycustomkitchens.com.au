@@ -1,0 +1,853 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortcut icon" href="https://diycustomkitchens.com.au/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Orders | DIY Custom Kitchens</title>
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/modules/system/system.base.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/system/system.menus.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/system/system.messages.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/system/system.theme.css?pgs2a1");
+</style>
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/modules/system/system.admin.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/misc/ui/jquery.ui.core.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/jquery.ui.theme.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/misc/ui/jquery.ui.datepicker.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/date/date_popup/themes/jquery.timeentry.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/libraries/chosen/chosen.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/chosen/css/chosen-drupal.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/contextual/contextual.css?pgs2a1");
+</style>
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/modules/book/book.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/colorbox_node/colorbox_node.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/comment/comment.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/commerce_add_to_cart_confirmation/css/commerce_add_to_cart_confirmation.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/commerce_kickstart/commerce_kickstart_menus/commerce_kickstart_menus.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/date/date_api/date.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/date/date_popup/themes/datepicker.1.7.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/fences/field.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/node/node.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/modules/user/user.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/video_filter/video_filter.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/css/views.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/ckeditor/css/ckeditor.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/admin_menu/admin_menu.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/admin_menu/admin_menu.uid1.css?pgs2a1");
+</style>
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/ctools/css/ctools.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/commerce_backoffice/theme/commerce-backoffice.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views_megarow/views_megarow.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/css/views-admin.ctools.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/css/views-admin.seven.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/ctools/css/dropbutton.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/ctools/css/button.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views_bulk_operations/css/views_bulk_operations.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/adminimal_admin_menu/adminimal_admin_menu.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/sites/all/modules/adminimal_admin_menu/js/slicknav/slicknav.css?pgs2a1");
+</style>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=latin,latin-ext" media="all" />
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/modules/toolbar/toolbar.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/commerce_kickstart/toolbar_megamenu/toolbar_megamenu.css?pgs2a1");
+</style>
+<style type="text/css" media="screen">
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/reset.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/style.css?pgs2a1");
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/contrib.css?pgs2a1");
+</style>
+<style type="text/css" media="all">
+@import url("https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/shiny.css?pgs2a1");
+@import url("../profiles/commerce_kickstart/themes/commerce_kickstart_admin/css/commerce_kickstart_admin.css?pgs2a1");
+
+</style>
+
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/commerce_kickstart/toolbar_megamenu/toolbar_megamenu_ie.css?pgs2a1" media="all" />
+<![endif]-->
+
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/ie.css?pgs2a1" media="all" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/ie8.css?pgs2a1" media="all" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/ie7.css?pgs2a1" media="all" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" href="https://diycustomkitchens.com.au/profiles/commerce_kickstart/themes/contrib/shiny/css/ie6.css?pgs2a1" media="all" />
+<![endif]-->
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/drupal.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/ui/jquery.ui.core.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/js/views-contextual.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/ui/jquery.ui.datepicker.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/date/date_popup/jquery.timeentry.pack.js?v=1.4.7"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/libraries/chosen/chosen.jquery.min.js?v=1.1.0"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/modules/contextual/contextual.js?v=1.0"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/form.js?v=7.59"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/ajax.js?v=7.59"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/commerce_add_to_cart_confirmation/js/commerce_add_to_cart_confirmation.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/commerce_kickstart/commerce_kickstart_search/commerce_kickstart_search.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/admin_menu/admin_menu.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/date/date_popup/date_popup.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/clientside_validation/jquery-validate/jquery.validate.min.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/ctools/js/auto-submit.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/misc/progress.js?v=7.59"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views_megarow/views_megarow.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/ctools/js/dropbutton.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/js/base.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views/js/ajax_view.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/views_bulk_operations/js/views_bulk_operations.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/modules/toolbar/toolbar.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/profiles/commerce_kickstart/modules/contrib/chosen/chosen.js?v=1.1.0"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/adminimal_admin_menu/js/jquery.min.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/adminimal_admin_menu/js/slicknav/jquery-no-conflict.slicknav.js?pgs2a1"></script>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/adminimal_admin_menu/js/adminimal_admin_menu.js?pgs2a1"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"commerce_kickstart_admin","theme_token":"0PDB8HJtj70YSJzC7m5QFgKllRCqZtIc2lpa1AiWdz0","js":{"sites\/all\/modules\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/all\/modules\/clientside_validation\/clientside_validation_html5\/clientside_validation_html5.js":1,"sites\/all\/modules\/clientside_validation\/clientside_validation.chosen.js":1,"sites\/all\/modules\/clientside_validation\/clientside_validation.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/js\/views-contextual.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ui\/jquery.ui.datepicker.min.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/date\/date_popup\/jquery.timeentry.pack.js":1,"profiles\/commerce_kickstart\/libraries\/chosen\/chosen.jquery.min.js":1,"modules\/contextual\/contextual.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/commerce_add_to_cart_confirmation\/js\/commerce_add_to_cart_confirmation.js":1,"profiles\/commerce_kickstart\/modules\/commerce_kickstart\/commerce_kickstart_search\/commerce_kickstart_search.js":1,"sites\/all\/modules\/admin_menu\/admin_menu.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/date\/date_popup\/date_popup.js":1,"sites\/all\/modules\/clientside_validation\/jquery-validate\/jquery.validate.min.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/ctools\/js\/auto-submit.js":1,"misc\/progress.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/views_megarow\/views_megarow.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/ctools\/js\/dropbutton.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/js\/base.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/js\/ajax_view.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/views_bulk_operations\/js\/views_bulk_operations.js":1,"modules\/toolbar\/toolbar.js":1,"profiles\/commerce_kickstart\/modules\/contrib\/chosen\/chosen.js":1,"sites\/all\/modules\/adminimal_admin_menu\/js\/jquery.min.js":1,"sites\/all\/modules\/adminimal_admin_menu\/js\/slicknav\/jquery-no-conflict.slicknav.js":1,"sites\/all\/modules\/adminimal_admin_menu\/js\/adminimal_admin_menu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/system\/system.admin.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.datepicker.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/date\/date_popup\/themes\/jquery.timeentry.css":1,"profiles\/commerce_kickstart\/libraries\/chosen\/chosen.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/chosen\/css\/chosen-drupal.css":1,"modules\/contextual\/contextual.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/colorbox_node\/colorbox_node.css":1,"modules\/comment\/comment.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/commerce_add_to_cart_confirmation\/css\/commerce_add_to_cart_confirmation.css":1,"profiles\/commerce_kickstart\/modules\/commerce_kickstart\/commerce_kickstart_menus\/commerce_kickstart_menus.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/video_filter\/video_filter.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/admin_menu\/admin_menu.css":1,"sites\/all\/modules\/admin_menu\/admin_menu.uid1.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/commerce_backoffice\/theme\/commerce-backoffice.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/views_megarow\/views_megarow.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/css\/views-admin.ctools.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/views\/css\/views-admin.seven.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/ctools\/css\/dropbutton.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/ctools\/css\/button.css":1,"profiles\/commerce_kickstart\/modules\/contrib\/views_bulk_operations\/css\/views_bulk_operations.css":1,"sites\/all\/modules\/adminimal_admin_menu\/adminimal_admin_menu.css":1,"sites\/all\/modules\/adminimal_admin_menu\/js\/slicknav\/slicknav.css":1,"\/\/fonts.googleapis.com\/css?family=Open+Sans:300,400,600,700,800\u0026subset=latin,latin-ext":1,"modules\/toolbar\/toolbar.css":1,"profiles\/commerce_kickstart\/modules\/commerce_kickstart\/toolbar_megamenu\/toolbar_megamenu.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/reset.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/style.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/contrib.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/shiny.css":1,"profiles\/commerce_kickstart\/themes\/commerce_kickstart_admin\/css\/commerce_kickstart_admin.css":1,"profiles\/commerce_kickstart\/modules\/commerce_kickstart\/toolbar_megamenu\/toolbar_megamenu_ie.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/ie.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/ie8.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/ie7.css":1,"profiles\/commerce_kickstart\/themes\/contrib\/shiny\/css\/ie6.css":1}},"video_filter":{"url":{"ckeditor":"\/video_filter\/dashboard\/ckeditor"},"instructions_url":"\/video_filter\/instructions","modulepath":"sites\/all\/modules\/video_filter"},"datePopup":{"edit-date-filter-min-datepicker-popup-0":{"func":"datepicker","settings":{"changeMonth":true,"changeYear":true,"autoPopUp":"focus","closeAtTop":false,"speed":"immediate","firstDay":0,"dateFormat":"d M yy","yearRange":"-3:+3","fromTo":false,"defaultDate":"0y"}},"edit-date-filter-max-datepicker-popup-0":{"func":"datepicker","settings":{"changeMonth":true,"changeYear":true,"autoPopUp":"focus","closeAtTop":false,"speed":"immediate","firstDay":0,"dateFormat":"d M yy","yearRange":"-3:+3","fromTo":false,"defaultDate":"0y"}}},"chosen":{"selector":"","minimum_single":0,"minimum_multiple":0,"minimum_width":200,"options":{"allow_single_deselect":false,"disable_search":false,"disable_search_threshold":0,"search_contains":true,"placeholder_text_multiple":"Choose some options","placeholder_text_single":"Choose an option","no_results_text":"No results match","inherit_select_classes":true}},"urlIsAjaxTrusted":{"\/admin\/commerce\/orders\/list":true,"\/views\/ajax":true},"ViewsMegarow":{"loadingText":"Loading...","scrollEnabled":true,"scrollPadding":120,"close":"x","destination":"admin\/commerce\/orders","throbber":"\u003Cimg src=\u0022https:\/\/diycustomkitchens.com.au\/profiles\/commerce_kickstart\/modules\/contrib\/ctools\/ctools_ajax_sample\/images\/ajax-loader.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading...\u0022 \/\u003E"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:e99181ba1f45c0dbbafbe8d2a06cd9c0":{"view_name":"commerce_backoffice_orders","view_display_id":"admin_page","view_args":"","view_path":"admin\/commerce\/orders","view_base_path":"admin\/commerce\/orders\/list","view_dom_id":"e99181ba1f45c0dbbafbe8d2a06cd9c0","pager_element":0}}},"better_exposed_filters":{"views":{"commerce_backoffice_orders":{"displays":{"admin_page":{"filters":{"status":{"required":false},"date_filter":{"required":false},"combine":{"required":false}}}}}}},"vbo":{"row_clickable":true},"tableHeaderOffset":"Drupal.admin.height","admin_menu":{"destination":"destination=admin\/commerce\/orders","hash":"1718cfbd4531c2d3b15bca98208a0f09","basePath":"\/admin_menu","margin_top":1,"position_fixed":1},"commerceAddToCartConfirmation":{"overlayClass":"commerce_add_to_cart_confirmation_overlay","overlayParentSelector":"body"},"clientsideValidation":{"forms":{"views-exposed-form-commerce-backoffice-orders-admin-page":{"errorPlacement":"1","general":{"errorClass":"error","wrapper":"li","validateTabs":0,"scrollTo":1,"scrollSpeed":"1000","disableHtml5Validation":"1","validateOnBlur":"1","validateOnBlurAlways":"0","validateOnKeyUp":"1","validateBeforeAjax":"0","validateOnSubmit":"1","showMessages":"0","errorElement":"label"},"rules":{"date_filter[min][date]":{"dateFormat":{"format":"j M Y","splitter":" ","daypos":0,"monthpos":1,"yearpos":2},"messages":{"dateFormat":"The value in Date is not a valid date.","maxlength":"Date field has to have maximum 30 values."},"maxlength":30},"date_filter[max][date]":{"dateFormat":{"format":"j M Y","splitter":" ","daypos":0,"monthpos":1,"yearpos":2},"messages":{"dateFormat":"The value in Date is not a valid date.","maxlength":"Date field has to have maximum 30 values."},"maxlength":30},"combine":{"maxlength":128,"messages":{"maxlength":"combine field has to have maximum 128 values."}}}}},"general":{"usexregxp":0,"months":{"January":1,"Jan":1,"February":2,"Feb":2,"March":3,"Mar":3,"April":4,"Apr":4,"May":5,"June":6,"Jun":6,"July":7,"Jul":7,"August":8,"Aug":8,"September":9,"Sep":9,"October":10,"Oct":10,"November":11,"Nov":11,"December":12,"Dec":12}},"groups":{"views-exposed-form-commerce-backoffice-orders-admin-page":{}}}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front logged-in no-sidebars page-admin page-admin-commerce page-admin-commerce-orders adminimal-menu adminimal-backend toolbar toolbar-drawer" >
+<div id="skip-link"> <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> </div>
+<div class="region region-page-top">
+  <div id="toolbar" class="toolbar overlay-displace-top clearfix">
+    <div class="toolbar-menu clearfix">
+      <ul id="toolbar-home">
+        <li class="home first last"><a href="/" title="Home"><span class="home-link">Home</span></a></li>
+      </ul>
+      <ul id="toolbar-user">
+        <li class="account first"><a href="/user" title="User account">Hello <strong>Stephen</strong></a></li>
+        <li class="logout last"><a href="/user/logout">Log out</a></li>
+      </ul>
+      <div class="toolbar-menu-wrapper wrapper-depth-2 clearfix">
+        <h2 class="element-invisible">Administrative toolbar</h2>
+        <ul class="menu group group-0 toolbar-menu-products menu-depth-2">
+          <li class="first last expanded depth-2"><a href="/admin/commerce/manage-products">Products</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-actions menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/manage-products/actions">Actions</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first collapsed depth-4"><a href="/admin/commerce/products" title="Manage products in the store.">Manage products</a></li>
+                      <li class="last leaf depth-4"><a href="/node/add/add-product">Add a product</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul class="menu group group-1 toolbar-menu-1 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/manage-products/settings">Settings</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first leaf depth-4"><a href="/admin/commerce/manage-products/settings/categories" title="Manage tagging, categorization, and classification of your products.">Categories</a></li>
+                      <li class="last leaf depth-4"><a href="/admin/commerce/manage-products/settings/product-variation-types" title="Manage products variation types for your store.">Variation types</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="menu group group-1 toolbar-menu-orders menu-depth-2">
+          <li class="first last expanded depth-2"><a href="/admin/commerce/manage-orders">Orders</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/manage-orders/actions">Actions</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first collapsed depth-4"><a href="/admin/commerce/orders" title="Manage orders in the store." class="active">Manage orders</a></li>
+                      <li class="last collapsed depth-4"><a href="/admin/commerce/orders/add" title="Create a new order.">Add an order</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="menu group group-2 toolbar-menu-content menu-depth-2">
+          <li class="first last expanded depth-2"><a href="/admin/commerce/manage-content">Content</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/manage-content/actions">Actions</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first leaf depth-4"><a href="/admin/content" title="Administer content and comments.">Manage content</a></li>
+                      <li class="leaf depth-4"><a href="/admin/content/comment" title="List and edit site comments and the comment approval queue.">Manage comments</a></li>
+                      <li class="last leaf depth-4"><a href="/node/add/add-content">Add content</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul class="menu group group-1 toolbar-menu-1 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/manage-content/settings">Settings</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first last leaf depth-4"><a href="/admin/commerce/manage-content/settings/content-types" title="Manage content types for your store.">Content types</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="menu group group-3 toolbar-menu-store-settings menu-depth-2">
+          <li class="first last expanded depth-2"><a href="/admin/commerce/config">Store settings</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first expanded depth-3"><a href="/admin/commerce/config/advanced-settings">Advanced store settings</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first collapsed depth-4"><a href="/admin/commerce/customer-profiles" title="Manage customer profiles and profile types in the store.">Customer profiles</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/shipping" title="Manage shipping methods and services.">Shipping</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/taxes" title="Manage tax rates and types.">Taxes</a></li>
+                      <li class="collapsed depth-4"><a href="/admin/commerce/config/payment-methods" title="Enable and configure payment method rule configurations.">Payment methods</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/checkout" title="Customize the checkout form and configure checkout rules.">Checkout settings</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/currency" title="Configure the default currency and display settings.">Currency settings</a></li>
+                      <li class="collapsed depth-4"><a href="/admin/commerce/config/line-items" title="Manage line item types for your store.">Line item types</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/order" title="Configure general order settings, fields, and displays.">Order settings</a></li>
+                      <li class="leaf depth-4"><a href="/admin/commerce/config/product-pricing" title="Enable and configure product pricing rules and pre-calculation.">Pricing rules</a></li>
+                      <li class="last leaf depth-4"><a href="/admin/commerce/config/commerce_search_api" title="Configure the generated product display index.">Commerce Search API</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="leaf depth-3"><a href="/admin/commerce/config/checkout_redirect" title="Checkout redirect module settings">Checkout Redirect</a></li>
+                <li class="last leaf depth-3"><a href="/admin/commerce/config/commerce_fancy_image_attributes" title="Allows configuration of the hex color field for attributes.">Commerce fancy image attributes</a></li>
+              </ul>
+              <ul class="menu group group-1 toolbar-menu-1 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/config/product-settings">Product settings</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first leaf depth-4"><a href="/admin/commerce/config/products-categories" title="Manage tagging, categorization, and classification of your products.">Categories</a></li>
+                      <li class="last collapsed depth-4"><a href="/admin/commerce/config/product-variation-types" title="Manage product variation types.">Variation types</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul class="menu group group-2 toolbar-menu-2 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/commerce/config/promotions">Promotions</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first last collapsed depth-4"><a href="/admin/commerce/discounts" title="Manage discounts.">Discounts</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="menu group group-4 toolbar-menu-site-settings menu-depth-2">
+          <li class="first last expanded depth-2"><a href="/admin/site-config">Site settings</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/site-config/layout">Visual &amp; Layout</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first leaf depth-4"><a href="/admin/appearance" title="Select and configure your themes.">Appearance</a></li>
+                      <li class="collapsed depth-4"><a href="/admin/structure/block" title="Configure what block content appears in your site&#039;s sidebars and other regions.">Blocks</a></li>
+                      <li class="last collapsed depth-4"><a href="/admin/structure/views" title="Manage customized lists of content.">Views</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul class="menu group group-1 toolbar-menu-1 menu-depth-3">
+                <li class="first last expanded depth-3"><a href="/admin/site-config/advanced">Advanced settings</a>
+                  <div class="toolbar-menu-wrapper wrapper-depth-4 clearfix">
+                    <ul class="menu group group-0 toolbar-menu-0 menu-depth-4">
+                      <li class="first collapsed depth-4"><a href="/admin/structure" title="Administer blocks, content types, menus, etc.">Structure</a></li>
+                      <li class="leaf depth-4"><a href="/admin/people" title="Manage user accounts, roles, and permissions.">People</a></li>
+                      <li class="leaf depth-4"><a href="/admin/modules" title="Extend site functionality.">Modules</a></li>
+                      <li class="collapsed depth-4"><a href="/admin/config" title="Administer settings.">Configuration</a></li>
+                      <li class="last collapsed depth-4"><a href="/admin/reports" title="View reports, updates, and errors.">Site reports</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="menu group group-5 toolbar-menu-help menu-depth-2">
+          <li class="first expanded depth-2"><a href="/admin/help">Help</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first last leaf depth-3"><a href="/admin/help/ah">Advanced help</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="expanded depth-2"><a href="/admin/book/admin-guide">Admin guide</a>
+            <div class="toolbar-menu-wrapper wrapper-depth-3 clearfix">
+              <ul class="menu group group-0 toolbar-menu-0 menu-depth-3">
+                <li class="first last leaf depth-3"><a href="/admin/manage/materials">Update materials</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="last collapsed depth-2"><a href="/">Empire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="toolbar-drawer clearfix"> </div>
+  </div>
+</div>
+<div id="branding" class="clearfix">
+  <h1 class="page-title">Orders</h1>
+  <div class="contextual-links-wrapper">
+    <ul class="contextual-links views-contextual-links-page">
+      <li class="views-ui-edit first last"><a href="/admin/structure/views/view/commerce_backoffice_orders/edit/admin_page?destination=admin/commerce/orders">Edit view</a></li>
+    </ul>
+  </div>
+  <div class="breadcrumb clearfix"><a href="/">Home</a> <span></span> <a href="/admin">Administration</a> <span></span> <a href="/admin/commerce/manage-orders">Orders</a> <span></span> <a href="/admin/commerce/manage-orders/actions">Actions</a> <span></span> Manage orders</div>
+  <h2 class="element-invisible">Primary tabs</h2>
+  <ul class="tabs primary">
+    <li class="active"><a href="/admin/commerce/orders" class="active">Orders<span class="element-invisible">(active tab)</span></a></li>
+    <li><a href="/admin/commerce/orders/carts">Shopping carts</a></li>
+  </ul>
+</div>
+<div id="page">
+  <div class="tabs-secondary clearfix"></div>
+  <div id="content" class="clearfix">
+    <div class="element-invisible"><a id="main-content"></a></div>
+    <div class="region region-content">
+      <div id="block-system-main" class="block block-system">
+        <div class="content">
+          <div class="view view-commerce-backoffice-orders view-id-commerce_backoffice_orders view-display-id-admin_page commerce-backoffice-view view-dom-id-e99181ba1f45c0dbbafbe8d2a06cd9c0">
+            <div class="view-filters">
+              <form class="ctools-auto-submit-full-form" action="/admin/commerce/orders/list" method="get" id="views-exposed-form-commerce-backoffice-orders-admin-page" accept-charset="UTF-8">
+                <div>
+                  <div class="views-exposed-form">
+                    <div class="views-exposed-widgets clearfix">
+                      <div id="edit-status-wrapper" class="views-exposed-widget views-widget-filter-status">
+                        <label for="edit-status"> Filter by </label>
+                        <div class="views-widget">
+                          <div class="form-item form-type-select form-item-status">
+                            <select data-placeholder="All statuses" id="edit-status" name="status" class="form-select">
+                              <option value="All" selected="selected">&lt;Any&gt;</option>
+                              <option value="canceled">Canceled (Canceled)</option>
+                              <option value="cart">Shopping cart (Shopping cart)</option>
+                              <option value="checkout_checkout">Checkout: Checkout (Checkout)</option>
+                              <option value="checkout_shipping">Checkout: Shipping (Checkout)</option>
+                              <option value="checkout_review">Checkout: Review (Checkout)</option>
+                              <option value="checkout_payment">Checkout: Payment (Checkout)</option>
+                              <option value="checkout_complete">Checkout: Complete (Checkout)</option>
+                              <option value="pending">Pending (Pending)</option>
+                              <option value="processing">Processing (Pending)</option>
+                              <option value="completed">Completed (Completed)</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="edit-date-filter-wrapper" class="views-exposed-widget views-widget-filter-date_filter">
+                        <div class="views-widget">
+                          <div id="edit-date-filter-min-wrapper">
+                            <div id="edit-date-filter-min-inside-wrapper">
+                              <div  class="container-inline-date">
+                                <div class="form-item form-type-date-popup form-item-date-filter-min">
+                                  <label for="edit-date-filter-min">Start date </label>
+                                  <div id="edit-date-filter-min"  class="date-padding">
+                                    <div class="form-item form-type-textfield form-item-date-filter-min-date">
+                                      <label class="element-invisible" for="edit-date-filter-min-datepicker-popup-0">Date </label>
+                                      <input type="text" id="edit-date-filter-min-datepicker-popup-0" name="date_filter[min][date]" value="" size="20" maxlength="30" class="form-text" />
+                                      <div class="description"> E.g., 21 Oct 2018</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="edit-date-filter-max-wrapper">
+                            <div id="edit-date-filter-max-inside-wrapper">
+                              <div  class="container-inline-date">
+                                <div class="form-item form-type-date-popup form-item-date-filter-max">
+                                  <label for="edit-date-filter-max">End date </label>
+                                  <div id="edit-date-filter-max"  class="date-padding">
+                                    <div class="form-item form-type-textfield form-item-date-filter-max-date">
+                                      <label class="element-invisible" for="edit-date-filter-max-datepicker-popup-0">Date </label>
+                                      <input type="text" id="edit-date-filter-max-datepicker-popup-0" name="date_filter[max][date]" value="" size="20" maxlength="30" class="form-text" />
+                                      <div class="description"> E.g., 21 Oct 2018</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="edit-combine-wrapper" class="views-exposed-widget views-widget-filter-combine">
+                        <div class="views-widget">
+                          <div class="form-item form-type-textfield form-item-combine">
+                            <input placeholder="Search by username, email, order ID" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128" class="form-text" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="views-exposed-widget views-submit-button">
+                        <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-commerce-backoffice-orders" name="" value="Apply" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="attachment attachment-before">
+              <ul class="action-links">
+                <li><a href="/admin/commerce/orders/add">Add an order</a></li>
+              </ul>
+            </div>
+            <div class="view-content">
+              <div class="vbo-views-form">
+                <form action="/admin/commerce/orders/list" method="post" id="views-form-commerce-backoffice-orders-admin-page" accept-charset="UTF-8">
+                <div>
+                <input type="hidden" name="form_build_id" value="form-rqwhnoNSQRZgds8F9esR4_M-njrRccczKZzJ8A_56xY">
+                <input type="hidden" name="form_token" value="xA5N8vAnHJxp_mP3QauaYAPRZThX7H_B7bQJOcS5lcU">
+                <input type="hidden" name="form_id" value="views_form_commerce_backoffice_orders_admin_page">
+                <input class="select-all-rows" type="hidden" name="select_all" value="">
+                <table class="views-table cols-7" data-view-name="commerce_backoffice_orders" data-view-display="admin_page">
+                <thead>
+                  <tr>
+                    <th class="views-field views-field-views-bulk-operations" scope="col"> <div class="form-item form-type-checkbox">
+                        <input class="vbo-table-select-all form-checkbox" type="checkbox" value="1">
+                      </div>
+                    </th>
+                    <th scope="col"> ORDER ID </th>
+                    <th class="views-field views-field-created" scope="col"> Created </th>
+                    <th class="views-field views-field-name" scope="col"> Name/Email </th>
+                    <th class="views-field views-field-commerce-order-total" scope="col"> Total </th>
+                    <th class="views-field views-field-status" scope="col"> Status </th>
+                    <th class="views-field views-field-operations-dropbutton" scope="col"> Operations </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd views-row-first views-row-last item-44 views-row-active" data-entity-id="44">
+                    <td class="views-field views-field-views-bulk-operations"><div class="form-item form-type-checkbox form-item-views-bulk-operations-0">
+                        <input class="vbo-select form-checkbox" type="checkbox" id="edit-views-bulk-operations-0" name="views_bulk_operations[0]" value="44">
+                      </div></td>
+                    <td> 44 <a href="/admin/commerce/orders/export/44" target="_blank" class="btn">(EXPORT ORDER #4xxx)</a></td>
+                    <td class="views-field views-field-created"> 20 Oct 2018 - 21:24 </td>
+                    <td class="views-field views-field-name"><a href="/users/test-user" title="View user profile." class="username">Test User</a><br>
+                      gorson01@hotmail.com </td>
+                    <td class="views-field views-field-commerce-order-total"> $233.85 </td>
+                    <td class="views-field views-field-status"> Shopping cart </td>
+                    <td class="views-field views-field-operations-dropbutton"><div class="ctools-dropbutton ctools-button ctools-button-processed ctools-dropbutton-processed" id="ctools-button-1">
+                        <div class="ctools-link"><a href="#" class="ctools-twisty ctools-text">open</a></div>
+                        <div class="ctools-content">
+                          <ul class="">
+                            <li class="quick-edit first"><a href="/commerce_backoffice/order/44/admin_page?destination=admin/commerce/orders" class="views-megarow-open views-megarow-open-processed">Quick edit</a></li>
+                            <li class="commerce-order-edit" style="display: none;"><a href="/admin/commerce/orders/44/edit?destination=admin/commerce/orders">Edit</a></li>
+                            <li class="commerce-order-payment" style="display: none;"><a href="/admin/commerce/orders/44/payment?destination=admin/commerce/orders">Payment</a></li>
+                            <li class="commerce-order-history" style="display: none;"><a href="/admin/commerce/orders/44/history?destination=admin/commerce/orders">History</a></li>
+                            <li class="commerce-order-delete last" style="display: none;"><a href="/admin/commerce/orders/44/delete?destination=admin/commerce/orders">Delete</a></li>
+                          </ul>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr class="megarow">
+                    <td colspan="7"><div class="views-megarow-content views-megarow-content-44">
+                      <div class="megarow-header clearfix"> <span class="megarow-title">Order 44</span> <a class="close" href="#">x</a> </div>
+                      <div class="megarow-content">
+                      <div class="entity entity-commerce-order commerce-order-commerce-order commerce-order-backofffice clearfix">
+                      <div class="content">
+                      <div class="content-left">
+                      <div class="field field-name-commerce-line-items field-type-commerce-line-item-reference field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+                            <div class="view view-commerce-line-item-table view-id-commerce_line_item_table view-display-id-default view-dom-id-21884756b6e21184f5208b5e855fa4db contextual-links-region">
+                              <div class="contextual-links-wrapper contextual-links-processed"><a class="contextual-links-trigger" href="#">Configure</a>
+                                <ul class="contextual-links">
+                                  <li class="views-ui-edit first last"><a href="/admin/structure/views/view/commerce_line_item_table/edit/default?destination=admin/commerce/orders">Edit view</a></li>
+                                </ul>
+                              </div>
+                              <div class="view-content">
+                                <table class="views-table cols-4">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"> Title </th>
+                                      <th class="views-field views-field-commerce-unit-price" scope="col"> Unit price </th>
+                                      <th class=" views-align-center" scope="col"> Quantity </th>
+                                      <th class="views-field views-field-commerce-total views-align-right" scope="col"> Total </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="odd views-row-first">
+                                      <td><h4>Fridge cabinet, single door hung left</h4>
+                                        <table class="tbl-order">
+                                          <tbody>
+                                            <tr>
+                                              <td>Height:</td>
+                                              <td><b>600mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Width:</td>
+                                              <td><b>600mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Depth:</td>
+                                              <td><b>300mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Apply edging to:</td>
+                                              <td><b></b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Int. material:</td>
+                                              <td><b>16.5mm WhtBrdMan WHITE HMR Solid Texture </b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Ext. material:</td>
+                                              <td><b>16.5mm Polytec ALABASTER Solid Sheen</b></td>
+                                            </tr>
+                                          </tbody>
+                                        </table></td>
+                                      <td class="views-field views-field-commerce-unit-price"> $203.85 </td>
+                                      <td><strong>1</strong></td>
+                                      <td class="views-field views-field-commerce-total views-align-right"> $203.85 </td>
+                                    </tr>
+                                    <tr class="even views-row-last">
+                                      <td><h4>Standard base cabinet, no doors</h4>
+                                        <table class="tbl-order">
+                                          <tbody>
+                                            <tr>
+                                              <td>Height:</td>
+                                              <td><b>720mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Width:</td>
+                                              <td><b>600mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Depth:</td>
+                                              <td><b>560mm</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td># Shelves:</td>
+                                              <td><b>0</b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Apply edging to:</td>
+                                              <td><b></b></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Int. material:</td>
+                                              <td><b>16.5mm WhtBrdMan WHITE HMR Solid Texture </b></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                        <b>Comments:</b><br>
+                                        TESTORDE RNOTES </td>
+                                      <td class="views-field views-field-commerce-unit-price"> $30.00 </td>
+                                      <td><strong>1</strong></td>
+                                      <td class="views-field views-field-commerce-total views-align-right"> $30.00 </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field field-name-commerce-order-total field-type-commerce-price field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+                            <table class="commerce-price-formatted-components">
+                              <tbody>
+                                <tr class="component-type-commerce-price-formatted-amount odd">
+                                  <td class="component-title">Order total</td>
+                                  <td class="component-total">$233.85</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="view view-commerce-message-messages view-id-commerce_message_messages view-display-id-order_view view-dom-id-b4356b2e3d28cfb9e5fcbc00261d7d58 contextual-links-region">
+                      <h2 class="title">Order history</h2>
+                      <div class="contextual-links-wrapper contextual-links-processed"><a class="contextual-links-trigger" href="#">Configure</a>
+                        <ul class="contextual-links">
+                          <li class="views-ui-edit first last"><a href="/admin/structure/views/view/commerce_message_messages/edit/order_view?destination=admin/commerce/orders">Edit view</a></li>
+                        </ul>
+                      </div>
+                      <div class="view-content">
+                        <table class="views-table cols-4">
+                          <thead>
+                            <tr>
+                              <th scope="col"> Type </th>
+                              <th class="views-field views-field-timestamp" scope="col"> Date </th>
+                              <th class="views-field views-field-name" scope="col"> User </th>
+                              <th class="views-field views-field-message-render" scope="col"> Description </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="odd views-row-first">
+                              <td><span class="Commerce Order: product added to cart">Cart</span></td>
+                              <td class="views-field views-field-timestamp"> 20 Oct 2018 - 21:26 </td>
+                              <td class="views-field views-field-name"><a href="/users/test-user" title="View user profile." class="username">Test User</a></td>
+                              <td class="views-field views-field-message-render"> Product 1769 added to the cart. </td>
+                            </tr>
+                            <tr class="even">
+                              <td><span class="Commerce Order: state change of the order">Order</span></td>
+                              <td class="views-field views-field-timestamp"> 20 Oct 2018 - 21:26 </td>
+                              <td class="views-field views-field-name"><a href="/users/test-user" title="View user profile." class="username">Test User</a></td>
+                              <td class="views-field views-field-message-render"> Status has been set to Shopping cart (previously: Checkout: Checkout). </td>
+                            </tr>
+                            <tr class="odd">
+                              <td><span class="Commerce Order: state change of the order">Order</span></td>
+                              <td class="views-field views-field-timestamp"> 20 Oct 2018 - 21:24 </td>
+                              <td class="views-field views-field-name"><a href="/users/test-user" title="View user profile." class="username">Test User</a></td>
+                              <td class="views-field views-field-message-render"> Status has been set to Checkout: Checkout (previously: Shopping cart). </td>
+                            </tr>
+                            <tr class="even views-row-last">
+                              <td><span class="Commerce Order: product added to cart">Cart</span></td>
+                              <td class="views-field views-field-timestamp"> 20 Oct 2018 - 21:24 </td>
+                              <td class="views-field views-field-name"><a href="/users/test-user" title="View user profile." class="username">Test User</a></td>
+                              <td class="views-field views-field-message-render"> Product 1779 added to the cart. </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="view-footer">
+                      <div id="clientsidevalidation-commerce-message-message-form-errors" class="messages error clientside-error" style="display: none;">
+                        <ul>
+                        </ul>
+                      </div>
+                
+                <form action="/commerce_backoffice/order/44/admin_page?destination=admin/commerce/orders" method="post" id="commerce-message-message-form" accept-charset="UTF-8" class="views-megarow-open-processed" novalidate="novalidate">
+                  <div>
+                    <fieldset class="collapsible collapsed form-wrapper collapse-processed" id="edit-">
+                      <legend><span class="fieldset-legend"><a class="fieldset-title" href="#"><span class="fieldset-legend-prefix element-invisible">Show</span> Add new comment</a><span class="summary"></span></span></legend>
+                      <div class="fieldset-wrapper">
+                        <div class="field-type-text-long field-name-message-commerce-body field-widget-text-textarea form-wrapper" id="edit-message-commerce-body">
+                          <div id="message-commerce-body-add-more-wrapper">
+                            <div class="text-format-wrapper">
+                              <div class="form-item form-type-textarea form-item-message-commerce-body-und-0-value">
+                                <label for="edit-message-commerce-body-und-0-value">Message <span class="form-required" title="This field is required.">*</span></label>
+                                <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                                  <textarea class="text-full ckeditor-mod form-textarea required ckeditor-processed" id="edit-message-commerce-body-und-0-value" name="message_commerce_body[und][0][value]" cols="60" rows="3" style="visibility: hidden; display: none;"></textarea>
+                                  <div id="cke_edit-message-commerce-body-und-0-value" class="cke_1 cke cke_reset cke_chrome cke_editor_edit-message-commerce-body-und-0-value cke_ltr cke_browser_webkit" dir="ltr" lang="en" role="application" aria-labelledby="cke_edit-message-commerce-body-und-0-value_arialbl"><span id="cke_edit-message-commerce-body-und-0-value_arialbl" class="cke_voice_label">Rich Text Editor, edit-message-commerce-body-und-0-value</span>
+                                    <div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_10" class="cke_voice_label">Editor toolbars</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_10" onmousedown="return false;"><span id="cke_12" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_13" class="cke_button cke_button__source cke_button_off" href="javascript:void('Source')" title="Source" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(2,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1968px;background-size:auto;">&nbsp;</span><span id="cke_13_label" class="cke_button_label cke_button__source_label" aria-hidden="false">Source</span></a></span><span id="cke_11" class="cke_combo cke_combo__format cke_combo_off" role="presentation"><span id="cke_11_label" class="cke_combo_label">Format</span><a class="cke_combo_button" title="Paragraph Format" tabindex="-1" href="javascript:void('Paragraph Format')" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(6,event,this);" onfocus="return CKEDITOR.tools.callFunction(7,event);" onclick="CKEDITOR.tools.callFunction(5,this);return false;"><span id="cke_11_text" class="cke_combo_text cke_combo_inlinelabel">Format</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_14" class="cke_button cke_button__bold cke_button_off" href="javascript:void('Bold')" title="Bold" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(8,event);" onfocus="return CKEDITOR.tools.callFunction(9,event);" onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_14_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span></a><a id="cke_15" class="cke_button cke_button__italic cke_button_off" href="javascript:void('Italic')" title="Italic" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(11,event);" onfocus="return CKEDITOR.tools.callFunction(12,event);" onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_16" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('Insert/Remove Numbered List')" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(14,event);" onfocus="return CKEDITOR.tools.callFunction(15,event);" onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1416px;background-size:auto;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span></a><a id="cke_17" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('Insert/Remove Bulleted List')" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(17,event);" onfocus="return CKEDITOR.tools.callFunction(18,event);" onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1368px;background-size:auto;">&nbsp;</span><span id="cke_17_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_18" class="cke_button cke_button__link cke_button_off" href="javascript:void('Link')" title="Link" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(20,event);" onfocus="return CKEDITOR.tools.callFunction(21,event);" onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1296px;background-size:auto;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__link_label" aria-hidden="false">Link</span></a><a id="cke_19" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('Unlink')" title="Unlink" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(23,event);" onfocus="return CKEDITOR.tools.callFunction(24,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1320px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">Unlink</span></a><a id="cke_20" class="cke_button cke_button__image cke_button_off" href="javascript:void('Image')" title="Image" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(26,event);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url(//cdn.ckeditor.com/4.5.4/full-all/plugins/icons.png?t=F969);background-position:0 -1008px;background-size:auto;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__image_label" aria-hidden="false">Image</span></a></span><span class="cke_toolbar_end"></span></span></span></span>
+                                      <div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 60px;"><span id="cke_25" class="cke_voice_label">Press ALT 0 for help</span>
+                                        <iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" title="Rich Text Editor, edit-message-commerce-body-und-0-value" aria-describedby="cke_25" tabindex="0" allowtransparency="true"></iframe>
+                                      </div>
+                                      <span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_1_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="Resize" onmousedown="CKEDITOR.tools.callFunction(1, event)">◢</span><span id="cke_1_path_label" class="cke_voice_label">Elements path</span><span id="cke_1_path" class="cke_path" role="group" aria-labelledby="cke_1_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div>
+                                  </div>
+                                  <div class="grippie" style="display: none;"></div>
+                                </div>
+                              </div>
+                              <a class="ckeditor_links" style="" href="javascript:void(0);" onclick="javascript:Drupal.ckeditorToggle(['edit-message-commerce-body-und-0-value'],'Switch to plain text editor','Switch to rich text editor');" id="switch_edit-message-commerce-body-und-0-value">Switch to plain text editor</a>
+                              <fieldset class="filter-wrapper form-wrapper" id="edit-message-commerce-body-und-0-format">
+                                <div class="fieldset-wrapper">
+                                  <div class="filter-help form-wrapper" id="edit-message-commerce-body-und-0-format-help">
+                                    <p><a href="/filter/tips" target="_blank">More information about text formats</a></p>
+                                  </div>
+                                  <div class="form-item form-type-select form-item-message-commerce-body-und-0-format">
+                                    <label for="edit-message-commerce-body-und-0-format--2">Text format </label>
+                                    <select class="filter-list form-select ckeditor-processed" id="edit-message-commerce-body-und-0-format--2" name="message_commerce_body[und][0][format]">
+                                      <option value="filtered_html" selected="selected">Filtered HTML</option>
+                                      <option value="full_html">Full HTML</option>
+                                      <option value="plain_text">Plain text</option>
+                                      <option value="php_code">PHP code</option>
+                                    </select>
+                                  </div>
+                                  <div class="filter-guidelines form-wrapper filter-guidelines-processed" id="edit-message-commerce-body-und-0-format-guidelines">
+                                    <div class="filter-guidelines-item filter-guidelines-filtered_html" style="display: block;">
+                                      <h3 style="display: none;">Filtered HTML</h3>
+                                      <ul class="tips">
+                                        <li>You may insert videos with [video:URL]</li>
+                                        <li>Web page addresses and e-mail addresses turn into links automatically.</li>
+                                      </ul>
+                                    </div>
+                                    <div class="filter-guidelines-item filter-guidelines-commerce_order_message" style="display: none;">
+                                      <h3 style="display: none;">Commerce Order Message</h3>
+                                      <ul class="tips">
+                                        <li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;blockquote&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li>
+                                      </ul>
+                                    </div>
+                                    <div class="filter-guidelines-item filter-guidelines-full_html" style="display: none;">
+                                      <h3 style="display: none;">Full HTML</h3>
+                                      <ul class="tips">
+                                        <li>You may insert videos with [video:URL]</li>
+                                        <li>Web page addresses and e-mail addresses turn into links automatically.</li>
+                                      </ul>
+                                    </div>
+                                    <div class="filter-guidelines-item filter-guidelines-plain_text" style="display: none;">
+                                      <h3 style="display: none;">Plain text</h3>
+                                      <ul class="tips">
+                                        <li>No HTML tags allowed.</li>
+                                        <li>Web page addresses and e-mail addresses turn into links automatically.</li>
+                                        <li>Lines and paragraphs break automatically.</li>
+                                      </ul>
+                                    </div>
+                                    <div class="filter-guidelines-item filter-guidelines-php_code" style="display: none;">
+                                      <h3 style="display: none;">PHP code</h3>
+                                      <ul class="tips">
+                                        <li>You may post PHP code. You should include &lt;?php ?&gt; tags.</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-actions form-wrapper" id="edit-actions">
+                          <input type="submit" id="edit-submit--3" name="op" value="Save" class="form-submit ajax-processed">
+                        </div>
+                      </div>
+                    </fieldset>
+                    <input type="hidden" name="form_build_id" value="form-VziguWH7YHSocxbRL8kTWcu8ki_3aitQp7bRcH87hYE">
+                    <input type="hidden" name="form_token" value="i-muudUjQCC2YiHmwO4VrjMlTd7pfTjz0oQvmMzhVZo">
+                    <input type="hidden" name="form_id" value="commerce_message_message_form">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="content-right">
+            <div class="field commerce-backoffice-order-status-form">
+              <div class="commerce-backoffice-order-status-label">Order status</div>
+              <form action="/commerce_backoffice/order/44/admin_page?destination=admin/commerce/orders" method="post" id="commerce-backoffice-order-status-form" accept-charset="UTF-8" class="views-megarow-open-processed">
+                <div>
+                  <div class="form-item form-type-select form-item-status">
+                    <label class="element-invisible" for="edit-status--2">Status </label>
+                    <select id="edit-status--2" name="status" class="form-select">
+                      <optgroup label="Canceled">
+                      <option value="canceled">Canceled</option>
+                      </optgroup>
+                      <optgroup label="Shopping cart">
+                      <option value="cart" selected="selected">Shopping cart</option>
+                      </optgroup>
+                      <optgroup label="Checkout">
+                      <option value="checkout_checkout">Checkout: Checkout</option>
+                      <option value="checkout_shipping">Checkout: Shipping</option>
+                      <option value="checkout_review">Checkout: Review</option>
+                      <option value="checkout_payment">Checkout: Payment</option>
+                      <option value="checkout_complete">Checkout: Complete</option>
+                      </optgroup>
+                      <optgroup label="Pending">
+                      <option value="pending">Pending</option>
+                      <option value="processing">Processing</option>
+                      </optgroup>
+                      <optgroup label="Completed">
+                      <option value="completed">Completed</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <input type="submit" id="edit-save" name="op" value="Save" class="form-submit">
+                  <input type="hidden" name="form_build_id" value="form-zytPqF-6ZL50m-1rhyLv3bbaYnC1KvCSXejrTQfvytc">
+                  <input type="hidden" name="form_token" value="Nwy_BHmevNWd6t7xUF6Z5spa-r-joiSKpvJUlOJsMAA">
+                  <input type="hidden" name="form_id" value="commerce_backoffice_order_status_form">
+                </div>
+              </form>
+            </div>
+            <div class="field field-name-commerce-customer-billing field-type-commerce-customer-profile-reference field-label-above">
+              <div class="field-label">Billing information:&nbsp;</div>
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="field field-name-commerce-customer-address field-type-addressfield field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even">
+                        <div class="addressfield-container-inline name-block">
+                          <div class="name-block">Test User</div>
+                        </div>
+                        <div class="street-block">
+                          <div class="thoroughfare">1 love lane</div>
+                        </div>
+                        <div class="addressfield-container-inline locality-block country-AU"><span class="locality">Canbwerra</span> <span class="state">ACT</span> <span class="postal-code">26100</span></div>
+                        <span class="country">Australia</span></div>
+                    </div>
+                  </div>
+                  <div class="field field-name-field-telephone field-type-text field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even">61006100</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-commerce-customer-shipping field-type-commerce-customer-profile-reference field-label-above">
+              <div class="field-label">Shipping information:&nbsp;</div>
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="field field-name-commerce-customer-address field-type-addressfield field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even">
+                        <div class="addressfield-container-inline name-block">
+                          <div class="name-block">bob jones</div>
+                        </div>
+                        <div class="street-block">
+                          <div class="thoroughfare">1 love lane</div>
+                        </div>
+                        <div class="addressfield-container-inline locality-block country-AU"><span class="locality">Canbwerra</span> <span class="state">ACT</span> <span class="postal-code">26100</span></div>
+                        <span class="country">Australia</span></div>
+                    </div>
+                  </div>
+                  <div class="field field-name-field-telephone field-type-text field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even">61006100</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <fieldset class="container-inline form-wrapper" id="edit-select">
+    <div class="fieldset-wrapper">
+      <div class="form-item form-type-select form-item-operation">
+        <select id="edit-operation" name="operation" class="form-select">
+          <option value="0">Bulk operations</option>
+          <option value="action::views_bulk_operations_delete_item">Delete order</option>
+          <option value="rules_component::rules_commerce_order_status_canceled">Set order status : Canceled</option>
+          <option value="rules_component::rules_commerce_order_status_cart">Set order status : Cart</option>
+          <option value="rules_component::rules_order_status_checkout_checkout">Set order status : Checkout (checkout)</option>
+          <option value="rules_component::rules_order_status_checkout_complete">Set order status : Checkout (complete)</option>
+          <option value="rules_component::rules_order_status_checkout_payment">Set order status : Checkout (payment)</option>
+          <option value="rules_component::rules_order_status_checkout_review">Set order status : Checkout (review)</option>
+          <option value="rules_component::rules_order_status_checkout_shipping">Set order status : Checkout (shipping)</option>
+          <option value="rules_component::rules_commerce_order_status_completed">Set order status : Completed</option>
+          <option value="rules_component::rules_commerce_order_status_pending">Set order status : Pending (pending)</option>
+          <option value="rules_component::rules_commerce_order_status_processing">Set order status : Pending (processing)</option>
+        </select>
+      </div>
+      <input type="submit" id="edit-submit--2" name="op" value="Apply" class="form-submit" disabled="">
+    </div>
+  </fieldset>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="feed-icons"> </div>
+</div>
+</div>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/clientside_validation/clientside_validation.ie8.js?pgs2a1"></script>
+<![endif]--> 
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/clientside_validation/clientside_validation_html5/clientside_validation_html5.js?pgs2a1"></script> 
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/clientside_validation/clientside_validation.chosen.js?pgs2a1"></script> 
+<script type="text/javascript" src="https://diycustomkitchens.com.au/sites/all/modules/clientside_validation/clientside_validation.js?pgs2a1"></script>
+</body>
+</html>

@@ -15,3 +15,91 @@
 	}
 	array_multisort($amounts, SORT_ASC, $options);
 }*/
+
+
+
+
+function empire_form_alter($form, $form_state, $form_id){
+	switch ($form_id) {
+
+		//case'commerce_cart_add_to_cart_form_1778':
+		//	$form['#validate'][] = 'empire_width_validate';
+		//break;
+   }
+ }
+
+ function empire_commerce_checkout_page_info_alter(&$checkout_pages) {
+  // change Submit button on last page so it doesn't say "Continue to next step"
+  $checkout_pages['review']['submit_value'] = 'Make secure payment';
+}
+
+
+function empire_hinges_validate(&$form, &$form_state){
+
+	$custom = $form_state['values']['line_item_fields']['field_custom_hinge_yes']['und']['0']['value'];
+	
+	//IF THERE IS A field_custom_hinge_yes VAKLUE OF YES, RUN TEST
+	if ($custom == 'Custom') {
+	
+		$door_height = $form_state['values']['line_item_fields']['field_height']['und']['0']['value'];
+		
+		$hinge_fields = array('field_1st_hinge_from_top', 'field_2nd_hinge_from_top', 'field_3rd_hinge_from_top', 'field_4th_hinge_from_top', 'field_5th_hinge_from_top', 'field_6th_hinge_from_top');
+		
+		$hinges_used = array();
+		
+		foreach ($hinge_fields as $hinge){
+			
+			//BUILD ARRAY OF RELEVANT HINGES
+			if ($form_state['values']['line_item_fields'][$hinge]['und']['0']['value']){
+				$hinges_used[] = $hinge;
+			}
+		}
+		
+		$hinge_num = count($hinges_used) - 2;
+				
+		//CHECK EACH HINGE VALUE IS AT LEAST 120 larger than previous
+		$i = 0;
+		
+		while($i < $hinge_num) {
+			
+			//CHECK HINGES TIO THE NEXT ONE EXCEPT FOR LAST THE HINGE
+			$this_hinge = $hinges_used[$i];
+			
+			$next_hinge = $hinges_used[$i+1];
+			
+			$this_height = $form_state['values']['line_item_fields'][$this_hinge]['und']['0']['value'];
+			$next_height = $form_state['values']['line_item_fields'][$next_hinge]['und']['0']['value'];
+			
+			if ( ($next_height - $this_height) < 120 ){
+				form_set_error('line_item_fields]['.$next_hinge, 'Please check your hinge positions. There must be at least 120mm between all hinges.');
+			}
+			
+			$i++;
+		}
+		
+		
+		
+		//CHECK 2ND LAST AND LAST HINGE
+		$last = $hinges_used[count($hinges_used)-1];
+		$second_last = $hinges_used[count($hinges_used)-2];
+		
+		$last_from_top = $door_height - $form_state['values']['line_item_fields'][$last]['und']['0']['value'];
+		
+		if ( ($last_from_top - $form_state['values']['line_item_fields'][$second_last]['und']['0']['value']) < 120){
+			
+			$error_field = 'line_item_fields]['.$last;
+			form_set_error($error_field, 'Your last hinge seems too close to the previous hinge, or your door is too short.');
+			form_set_error('line_item_fields][field_height', '');
+		}
+	}
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function empire_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state, $form_id) {
+	
+	// IF ADD TO CART FORM, RUN VAILDATOR
+	$form['#validate'][] = 'empire_hinges_validate';
+}

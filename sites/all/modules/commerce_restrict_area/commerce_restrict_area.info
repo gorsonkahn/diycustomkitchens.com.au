@@ -1,0 +1,16 @@
+name = Commerce Restrict Area
+description = Provides Area Blacklisting & Whitelisting functionality, allowing you to specify which cannot complete checkout.
+package = Commerce (contrib)
+core = 7.x
+
+configure = admin/commerce/config/restrict-area
+
+dependencies[] = commerce_order
+dependencies[] = commerce_product
+dependencies[] = rules
+
+; Information added by Drupal.org packaging script on 2018-09-13
+version = "7.x-1.0+1-dev"
+core = "7.x"
+project = "commerce_restrict_area"
+datestamp = "1536860584"

@@ -83,13 +83,13 @@ interface LingotekTranslatableEntity {
   public function getTitle();
 
   public function getDescription();
-  
+
   public function getDocumentName();
   
   public function getUrl();
   
   public function getNote();
-  
+
   public function preDownload($lingotek_locale, $completed);
   
   public function postDownload($lingotek_locale, $completed);

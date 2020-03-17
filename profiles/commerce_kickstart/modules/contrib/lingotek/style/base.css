@@ -113,7 +113,7 @@ input.lingotek-content-settings-table.form-checkbox {
     -moz-columns:100px 2;
 }
 
-#lingotek-bulk-grid-form a.ltk-source-icon {
+#lingotek-bulk-grid-form a.ltk-source-icon, span.ltk-source-icon {
   background-color:#80a49e;
   margin-right: 3px;
   padding: 1px;
@@ -126,7 +126,7 @@ input.lingotek-content-settings-table.form-checkbox {
   font-family: 'Roboto Mono', monospace;
 }
 
-#lingotek-bulk-grid-form span.ltk-source-icon-config-current {
+#lingotek-bulk-grid-form span.ltk-source-icon-config-current, span.ltk-source-icon-config-current {
   background-color: #5FDC64;
   border: 1px solid #5FDC64;
   color: #ffffff;
@@ -139,12 +139,12 @@ input.lingotek-content-settings-table.form-checkbox {
   font-family: 'Roboto Mono', monospace;
 }
 
-#lingotek-bulk-grid-form span.ltk-source-icon-config-current:hover {
+#lingotek-bulk-grid-form span.ltk-source-icon-config-current:hover, span.ltk-source-icon-config-current:hover {
   background-color: #43A047;
   border: 1px solid #43A047;
 }
 
-#lingotek-bulk-grid-form a.language-icon {
+#lingotek-bulk-grid-form .language-icon, span.language-icon {
   background-color:#80a49e;
   margin-right: 3px;
   padding: 1px;
@@ -157,7 +157,7 @@ input.lingotek-content-settings-table.form-checkbox {
   font-family: 'Roboto Mono', monospace;
 }
 
-#lingotek-bulk-grid-form span.ltk-target-none {
+#lingotek-bulk-grid-form span.ltk-target-none, span.ltk-target-none {
   background-color: #FFFFFF;
   border: 1px solid #999999;
   color: #999999;
@@ -170,12 +170,12 @@ input.lingotek-content-settings-table.form-checkbox {
   font-family: 'Roboto Mono', monospace;
 }
 
-#lingotek-bulk-grid-form span.ltk-target-none:hover {
+#lingotek-bulk-grid-form span.ltk-target-none:hover, span.ltk-target-none:hover {
   border: 1px solid #8C8C8C;
   color: #8C8C8C;
 }
 
-#lingotek-bulk-grid-form span.ltk-target-disabled {
+#lingotek-bulk-grid-form span.ltk-target-disabled, span.ltk-target-disabled {
   background-color: #FFFFFF;
   border: 1px solid #999999;
   color: #999999;
@@ -235,141 +235,154 @@ a:hover.tooltips span {
   text-decoration: none;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-none {
+#lingotek-bulk-grid-form .ltk-source-icon.source-none, span.ltk-source-icon.source-none {
   background-color: #ffffff;
   border: 1px solid #999999;
   color: #999999;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-none:hover {
+#lingotek-bulk-grid-form .ltk-source-icon.source-none:hover, .ltk-source-icon.source-none:hover {
   border: 1px solid #8C8C8C;
   color: #8C8C8C;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-edited {
+#lingotek-bulk-grid-form .ltk-source-icon.source-edited, span.ltk-source-icon.source-edited {
   background-color: #ffc107;
   border: 1px solid #ffc107;
   color: #575757;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-edited:hover {
+#lingotek-bulk-grid-form .ltk-source-icon.source-edited:hover, span.ltk-source-icon.source-edited:hover {
   background-color: #FFB300;
   border: 1px solid #FFB300;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-current {
+#lingotek-bulk-grid-form .ltk-source-icon.source-current, span.ltk-source-icon.source-current {
   background-color: #5FDC64;
   border: 1px solid #5FDC64;
   color: #ffffff;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-current:hover {
+#lingotek-bulk-grid-form .ltk-source-icon.source-current:hover, span.ltk-source-icon.source-current:hover {
   background-color: #43A047;
   border: 1px solid #43A047;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-error {
+#lingotek-bulk-grid-form .ltk-source-icon.source-error, span.ltk-source-icon.source-error {
   background-color: #B71C1C;
   border: 1px solid #B71C1C;
   color: #ffffff;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-error:hover {
+#lingotek-bulk-grid-form .ltk-source-icon.source-error:hover, span.ltk-source-icon.source-error:hover {
   background-color: #9E0303;
   border: 1px solid #9E0303;
 }
 
-#lingotek-bulk-grid-form .ltk-source-icon.source-disabled {
+#lingotek-bulk-grid-form .ltk-source-icon.source-disabled, span.ltk-source-icon.source-disabled {
   background-color: #FAFAFA;
   border: 1px solid #999999;
   color: #999999;
   text-decoration: line-through;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-pending {
+#lingotek-bulk-grid-form .language-icon.target-pending, span.language-icon.target-pending {
   background-color: #F37F16;
   border: 1px solid #F37F16;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-pending:hover {
+#lingotek-bulk-grid-form .language-icon.target-pending:hover, span.language-icon.target-pending:hover {
   background-color: #E67209;
   border: 1px solid #E67209;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-current {
+#lingotek-bulk-grid-form .language-icon.target-current, span.language-icon.target-current {
   background-color: #5FDC64;
   border: 1px solid #5FDC64;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-current:hover {
+#lingotek-bulk-grid-form .language-icon.target-current:hover, span.language-icon.target-current:hover {
   background-color: #43A047;
   border: 1px solid #43A047;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-ready {
+#lingotek-bulk-grid-form .language-icon.target-ready, span.language-icon.target-ready {
   background-color: #2196F3;
   border: 1px solid #2196F3;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-ready:hover {
+#lingotek-bulk-grid-form .language-icon.target-ready:hover, span.language-icon.target-ready:hover {
   background-color: #1E88E5;
   border: 1px solid #1E88E5;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-interim {
+#lingotek-bulk-grid-form .language-icon.target-interim, span.language-icon.target-interim {
   background-color: #FFFFFF;
   border: 1px solid #4CAF50;
   color: #4CAF50;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-interim:hover {
+#lingotek-bulk-grid-form .language-icon.target-interim:hover, span.language-icon.target-interim:hover {
   border: 1px solid #43A047;
   color: #43A047
 }
 
-#lingotek-bulk-grid-form .language-icon.target-ready_interim {
+#lingotek-bulk-grid-form .language-icon.target-ready_interim, span.language-icon.target-ready_interim {
   background-color: #FFFFFF;
   border: 1px solid #2196F3;
   color: #2196F3;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-ready_interim:hover {
+#lingotek-bulk-grid-form .language-icon.target-ready_interim:hover, span.language-icon.target-ready_interim:hover {
   border: 1px solid #1E88E5;
   color: #1E88E5;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-edited {
+#lingotek-bulk-grid-form .language-icon.target-edited, span.language-icon.target-edited {
   background-color: #FFC107;
   border: 1px solid #FFC107;
   color: #575757;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-edited:hover {
+#lingotek-bulk-grid-form .language-icon.target-edited:hover, span.language-icon.target-edited:hover {
   background-color: #FFB300;
   border: 1px solid #FFB300;
+  color: #575757;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-untracked {
+#lingotek-bulk-grid-form .language-icon.target-edited_interim, span.language-icon.target-edited_interim {
+  background-color: #FFFFFF;
+  border: 1px solid #FFC107;
+  color: #FFC107;
+}
+
+#lingotek-bulk-grid-form .language-icon.target-edited_interim:hover, span.language-icon.target-edited_interim:hover {
+  background-color: #FFFFFF;
+  border: 1px solid #FFB300;
+  color: #FFB300;
+}
+
+#lingotek-bulk-grid-form .language-icon.target-untracked, span.language-icon.target-untracked {
   background-color: #999999;
   border: 1px solid #999999;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-untracked:hover {
+#lingotek-bulk-grid-form .language-icon.target-untracked:hover, span.language-icon.target-untracked:hover {
   background-color: #8C8C8C;
   border: 1px solid #8C8C8C;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-error {
+#lingotek-bulk-grid-form .language-icon.target-error, span.language-icon.target-error {
   background-color: #B71C1C;
   border: 1px solid #B71C1C;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-error:hover {
+#lingotek-bulk-grid-form .language-icon.target-error:hover, span.language-icon.target-error:hover {
   background-color: #9E0303;
   border: 1px solid #9E0303;
 }
 
-#lingotek-bulk-grid-form .language-icon.target-non-lingotek {
+#lingotek-bulk-grid-form .language-icon.target-non-lingotek, span.language-icon.target-non-lingotek {
   background-color: inherit;
   border: 1px solid #ccc;
   color: #aaa;
@@ -396,10 +409,10 @@ a:hover.tooltips span {
     color: #000;
 }
 
-#lingotek-bulk-grid-form .ltk-download {
+#lingotek-bulk-grid-form .ltk-download, span.ltk-download {
     color: #2196F3;
 }
-#lingotek-bulk-grid-form .ltk-download:hover {
+#lingotek-bulk-grid-form .ltk-download:hover, span.ltk-download:hover {
     color: #1E88E5;
 }
 .ltk-legend {
@@ -409,10 +422,10 @@ a:hover.tooltips span {
     color: #3479c0;
 }
 
-#lingotek-bulk-grid-form .ltk-refresh {
+#lingotek-bulk-grid-form .ltk-refresh, span.ltk-refresh {
     color: #F37F16;
 }
-#lingotek-bulk-grid-form .ltk-refresh:hover {
+#lingotek-bulk-grid-form .ltk-refresh:hover, span.ltk-refresh:hover {
     color: #E67209;
 }
 

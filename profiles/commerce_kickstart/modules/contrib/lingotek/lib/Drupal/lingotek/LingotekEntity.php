@@ -149,7 +149,8 @@ class LingotekEntity implements LingotekTranslatableEntity {
     }
     elseif (isset($this->entity->$property_name)) {
       $property = $this->entity->$property_name;
-    } else {
+    }
+    else {
       $val = lingotek_keystore($this->getEntityType(), $this->getId(), $property_name);
       $property = ($val !== FALSE) ? $val : $property;
     }
@@ -305,6 +306,10 @@ class LingotekEntity implements LingotekTranslatableEntity {
       LingotekLog::info('Did not find a label for @entity_type #!entity_id, using default label.',
           array('@entity_type' => $this->entity_type, '@entity_id' => $this->entity_id));
       $this->title = $this->entity_type . " #" . $this->entity_id;
+      if ($this->entity_type === 'paragraphs_item') {
+        list($parent_id, $parent_title) = lingotek_get_paragraph_parent_info($this->entity_type, $this->entity_id);
+        $this->title .= ' (Host entity: ' . $parent_title . ')';
+      }
     }
 
     return $this->title;
@@ -343,6 +348,17 @@ class LingotekEntity implements LingotekTranslatableEntity {
     return $id;
   }
 
+    /**
+   * Return the bundle for the entity
+   *
+   * @return string
+   *   The bundle associated with this object
+   */
+  public function getBundle() {
+    list(, , $bundle) = lingotek_entity_extract_ids($this->entity_type, $this->entity);
+    return $bundle;
+  }
+
   public function getSourceLocale() {
     if ($this->entity_type == 'taxonomy_term') {
       $vocabulary = taxonomy_vocabulary_machine_name_load($this->vocabulary_machine_name);
@@ -352,8 +368,8 @@ class LingotekEntity implements LingotekTranslatableEntity {
       }
     }
     if ($this->entity_type == 'bean') {
-      // Assume all block entities are created in the site's default language.
-      return Lingotek::convertDrupal2Lingotek(language_default()->language);
+      $bean_language = lingotek_get_bean_source($this->entity->bid);
+      return Lingotek::convertDrupal2Lingotek($bean_language);
     }
     if ($this->entity_type == 'group') {
       $group_language = lingotek_get_group_source($this->entity->gid);

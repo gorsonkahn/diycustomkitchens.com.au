@@ -186,6 +186,8 @@
     window.onAmazonLoginReady = function () {
       amazon.Login.setClientId(settings.AmazonLPA.clientId);
       amazon.Login.setUseCookie(true);
+    };
+    window.onAmazonPaymentsReady = function () {
       Drupal.AmazonLPA.initialize(settings);
     };
   });

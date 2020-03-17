@@ -50,7 +50,6 @@ class LingotekProfile {
         }
       }
       self::$profiles[$profile_id] = $unique_attributes;
-      $this->save();
     }
     // A convenience reference to the current profile.
     $this->profile = &self::$profiles[$profile_id];
@@ -508,32 +507,35 @@ class LingotekProfile {
     if (empty($this->profile['target_language_overrides'])) {
       unset($this->profile['target_language_overrides']);
     }
-    $this->save();
   }
 
   public function deleteAttribute($attrib_name, $target_locale = NULL) {
     if ($target_locale) {
       if (isset($this->profile['target_language_overrides'][$target_locale][$attrib_name])) {
         unset($this->profile['target_language_overrides'][$target_locale][$attrib_name]);
-        $this->save();
       }
     }
     else {
       if (isset($this->profile[$attrib_name])) {
         unset($this->profile[$attrib_name]);
-        $this->save();
       }
     }
   }
 
   public function deleteTargetLocaleOverrides($target_locale) {
     unset($this->profile['target_language_overrides'][$target_locale]);
-    $this->save();
   }
 
   public function getTargetLocaleOverrides($target_locale) {
     if (!empty($this->profile['target_language_overrides'][$target_locale])) {
       return $this->profile['target_language_overrides'][$target_locale];
+    }
+    return array();
+  }
+
+  public function getAllTargetLocaleOverrides() {
+    if (!empty($this->profile['target_language_overrides'])) {
+      return $this->profile['target_language_overrides'];
     }
     return array();
   }

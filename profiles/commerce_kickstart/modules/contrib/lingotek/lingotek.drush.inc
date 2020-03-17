@@ -20,6 +20,8 @@ function lingotek_drush_help($command) {
       return dt('Run the Lingotek prepare vocabularies utility');
     case 'drush:lt-prepare-menus':
       return dt('Run the Lingotek prepare menus utility');
+    case 'drush:lt-db-cleanup':
+      return dt('Disassociates all entities and config items locally. Useful when the database is copied from one environment to another. Use with caution.');
     // Commented out: error reported /home/{user}/.composer/vendor/drush/drush/commands/core/drupal/batch.inc on line 45 and 137
     // case 'drush:lt-prepare-builtins':
     //   return dt('Run the Lingotek prepare built-ins utility');
@@ -94,6 +96,13 @@ function lingotek_drush_command() {
     'description' => dt('Prepare menus for Lingotek translation.'),
     'examples' => array(
       'drush lt-prepare-menus' => '',
+    ),
+  );
+  $items['lt-db-cleanup'] = array(
+    'command-hook' => 'db_cleanup',
+    'description' => dt('Disassociates entities and config items locally.'),
+    'examples' => array(
+      'drush lt-db-cleanup' => '',
     ),
   );
   // Commented out: error reported /home/{user}/.composer/vendor/drush/drush/commands/core/drupal/batch.inc on line 45 and 137
@@ -259,4 +268,13 @@ function drush_lingotek_prepare_item($config_groups, $variable) {
   } catch (Exception $e) {
     throw $e;
   }
+}
+
+/**
+ * Callback function for drush command lt-db-cleanup.
+ */
+function drush_lingotek_db_cleanup() {
+  LingotekSync::disassociateAllEntities();
+  LingotekSync::disassociateAllLids();
+  LingotekSync::disassociateAllSets();
 }

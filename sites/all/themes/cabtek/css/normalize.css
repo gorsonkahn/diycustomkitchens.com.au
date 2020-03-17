@@ -19,8 +19,7 @@ audio:not([controls]) {
 }
 html {
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	background: #323a45;
+	-ms-text-size-adjust: 100%;	
 	color: #4a4a4a
 }
 a:focus {
@@ -175,4 +174,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	width:100%;
+	overflow:auto
 }

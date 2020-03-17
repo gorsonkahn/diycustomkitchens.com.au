@@ -2,8 +2,9 @@
 
 /**
  * @file
- * Default views for customers who have not order X months/weeks,
- * customers who have not order for an year and customers whose order
+ * Default views for customers who have not order X months/weeks.
+ *
+ * Customers who have not order for an year and customers whose order
  * is still in checkout process and exceeded 30 minutes.
  */
 
@@ -11,6 +12,7 @@
  * Implements hook_views_default_views().
  */
 function mailjet_trigger_examples_views_default_views() {
+  $prefix_human_name = 'Mailjet: ';
   $views = array();
 
   /* Customers who have not ordered for X weeks-months */
@@ -19,7 +21,7 @@ function mailjet_trigger_examples_views_default_views() {
   $view->description = 'Customers who have not ordered for X weeks/months';
   $view->tag = 'default';
   $view->base_table = 'commerce_order';
-  $view->human_name = 'Mailjet: Customers who did not ordered for X weeks/months';
+  $view->human_name = $prefix_human_name . 'Customers who did not ordered for X weeks/months';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -98,7 +100,7 @@ function mailjet_trigger_examples_views_default_views() {
       'label' => '',
       'settings' => array(
         'show_all_tokens' => 1,
-         'display_values' => array(
+        'display_values' => array(
           '_all_' => '_all_',
         ),
       ),
@@ -158,10 +160,10 @@ function mailjet_trigger_examples_views_default_views() {
 
   $view = new view();
   $view->name = 'purchase_anniversary_promo_view';
-  $view->description = '';
+  $view->description = 'Anniversary emails';
   $view->tag = 'default';
   $view->base_table = 'commerce_order';
-  $view->human_name = 'Purchase Anniversary promo view';
+  $view->human_name = $prefix_human_name . 'Purchase Anniversary promo view';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -279,10 +281,10 @@ function mailjet_trigger_examples_views_default_views() {
 
   $view = new view();
   $view->name = 'last_product_exceeded_30_min';
-  $view->description = '';
+  $view->description = 'Customers whose order exceeded 30 minutes';
   $view->tag = 'default';
   $view->base_table = 'commerce_order';
-  $view->human_name = 'Last product exceeded 30 min';
+  $view->human_name = $prefix_human_name . 'Last product exceeded 30 min';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -373,7 +375,7 @@ function mailjet_trigger_examples_views_default_views() {
       'settings' => array(
         'show_all_tokens' => 1,
         'display_values' => array(
-        '_all_' => '_all_',
+          '_all_' => '_all_',
         ),
       ),
     ),
@@ -439,3 +441,4 @@ function mailjet_trigger_examples_views_default_views() {
 
   return $views;
 }
+

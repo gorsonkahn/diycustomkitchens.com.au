@@ -170,7 +170,13 @@ function commerce_amazon_lpa_addressbook_pane_checkout_form_submit(&$form, &$for
     if (isset($form[$pane_id]['commerce_customer_address'])) {
       // Don't require address form elements.
       unset($form[$pane_id]['commerce_customer_address']['#required']);
-      $customer_profile = $form[$pane_id]['customer_profile']['#value'];
+      // Use the existing shipping profile if it exists, or create a new one.
+      if (!empty($form[$pane_id]['customer_profile'])) {
+        $customer_profile = $form[$pane_id]['customer_profile']['#value'];
+      }
+      else {
+        $customer_profile = commerce_customer_profile_new('shipping', $order->uid);
+      }
 
       $form_state['values'][$pane_id]['commerce_customer_address'][LANGUAGE_NONE][0] = array(
         'country' => $amazon_shipping_address['CountryCode'],

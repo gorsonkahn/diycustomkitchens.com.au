@@ -1,19 +1,33 @@
 <?php
+ /**
+ * @file
+ * Helper functiions for Registration Iframe.
+ */
+
+use MailjetTools\MailjetApi;
 
 /**
- * Registration iframe form.
- */
+ * Regisration iframe block code.
+  */
 function mailjet_register_iframe() {
-    global $base_url;
-    global $language;
-  
-    $langCodesMap = array('en' => 'en_US', 'fr' => 'fr_FR', 'de' => 'de_DE', 'es' => 'es_ES');
-    $defaultLang = 'en';
-    $locale = isset($langCodesMap[$language->language]) ? $langCodesMap[$language->language] : $langCodesMap[$defaultLang];
-    
-    $default_url = IFRAME_URL."reseller/signup?r=commerceguys&sp=display&p=drupal-3.0&locale={$locale}&cb=";
-    $callbackurl = urlencode($base_url . '?q=/admin/config/system/mailjet/api/register/alter_callback');
-    return '<iframe src="' . $default_url . $callbackurl . '" width="100%" height="1080px" frameborder="0"></iframe>';
+  global $base_url;
+  global $language;
+
+  $lang_codes_map = array(
+    'en' => 'en_US',
+    'fr' => 'fr_FR',
+    'de' => 'de_DE',
+    'es' => 'es_ES',
+  );
+
+  $default_lang = 'en';
+  $locale = isset($lang_codes_map[$language->language]) ? $lang_codes_map[$language->language] : $lang_codes_map[$default_lang];
+
+//  $default_url = IFRAME_URL . "reseller/signup?r=commerceguys&sp=display&aff=drupal-3.0&locale={$locale}&cb=";
+  $default_url = IFRAME_URL . "reseller/signup?r=commerceguys&sp=display&aff=drupal-3.0&locale={$locale}";
+  $callbackurl = urlencode($base_url . '?q=/admin/config/system/mailjet/api/register/alter_callback');
+  return '<iframe src="' . $default_url . '" width="100%" height="1080px" frameborder="0"></iframe>';
+//  return '<iframe src="' . $default_url . $callbackurl . '" width="100%" height="1080px" frameborder="0"></iframe>';
 }
 
 /**
@@ -24,21 +38,16 @@ function mailjet_plans_iframe() {
     drupal_set_message(t('You need to add your Mailjet API details before you can continue'), 'warning');
     drupal_goto('admin/config/system/mailjet/api');
   }
-
-  $token = variable_get("APItoken");
-  if (!empty($token)) {
-      
     global $language;
-  
-    $langCodesMap = array('en' => 'en_US', 'fr' => 'fr_FR', 'de' => 'de_DE', 'es' => 'es_ES');
-    $defaultLang = 'en';
-    $locale = isset($langCodesMap[$language->language]) ? $langCodesMap[$language->language] : $langCodesMap[$defaultLang];
 
-    $callbackurl = 'r=commerceguys&t='.$token.'&show_menu=none&sp=display&locale='.$locale;
+    $lang_codes_map = array('en' => 'en_US', 'fr' => 'fr_FR', 'de' => 'de_DE', 'es' => 'es_ES');
+    $default_lang = 'en';
+    $locale = isset($lang_codes_map[$language->language]) ? $lang_codes_map[$language->language] : $lang_codes_map[$default_lang];
 
-    $default_url = IFRAME_URL."reseller/pricing/?";
+    //$callbackurl = 't=' . $token . '&show_menu=none&sp=display&locale=' . $locale;
+//    $callbackurl = 'r=commerceguys&t=' . $token . '&show_menu=none&sp=display&locale=' . $locale;
+    $callbackurl = '';
+    $default_url = IFRAME_URL . "reseller/pricing/?";
 
     return '<iframe src="' . $default_url . $callbackurl . '" width="100%" height="1080px" frameborder="0"></iframe>';
-  }
-  return t('Unable to generate upgrade form.');
-}
+ }

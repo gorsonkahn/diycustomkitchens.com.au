@@ -13,5 +13,8 @@ h1 {
 }
 .view-order-status a {
 	display:inline-block;
-	background:#006699
+	padding:6px 12px;
+	text-decoration:none;
+	background:#006699;
+	color:#fff
 }

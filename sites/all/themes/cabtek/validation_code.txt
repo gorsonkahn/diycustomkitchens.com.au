@@ -1,0 +1,51 @@
+Measured from the <b>TOP</b> of the door to the centre of the hinge and must be from 60mm to 200mm.
+
+
+Measured from the centre of the previous hinge to the centre of this hinge. <b>MUST</b> be at least 120mm.
+
+
+
+
+Measured from the <b>BOTTOM</b> of the door to the centre of the hinge and must be from 60mm to 200mm.
+
+
+
+
+HINGE CHECK 3
+$hinge_bottom = $this->value;
+$hinge2 = ($this->entity->field_2nd_hinge_from_top)['und'][0]['value'];
+$hinge1 = ($this->entity->field_1st_hinge_from_top)['und'][0]['value'];
+$height = ($this->entity->field_height)['und'][0]['value'];
+
+$used = $hinge_bottom + $hinge2 + $hinge1;
+
+if ( ($height - $used) < 120  ) {
+  $this->set_error();
+}
+
+
+
+
+if($hinge2 == $hinge1) {
+  $this->set_error();
+}
+
+
+[commerce-line-item:field_custom_hinge_yes]
+== 
+Yes
+
+
+
+$min = 120;
+$hinge_bottom = $this->value;
+$hinge2 = ($this->entity->field_2nd_hinge_from_top)['und'][0]['value'];
+$hinge1 = ($this->entity->field_1st_hinge_from_top)['und'][0]['value'];
+$used = $hinge_bottom + $hinge2;
+$used = $used + $hinge1;
+$height = ($this->entity->field_height)['und'][0]['value'];
+$diff = ($height - $used);
+
+if ($height == 800 ) {
+  $this->set_error();
+}
