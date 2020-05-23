@@ -499,8 +499,9 @@ function lingotek_advanced_parsing_upgrade_form_submit($form, $form_state) {
   if (!empty($form_state['values']['node_id'])) {
     lingotek_keystore('node', $form_state['values']['node_id'], 'use_advanced_parsing', 1);
     $target_node = lingotek_node_load_default($form_state['values']['node_id']);
+    $entity_type = isset($target_node) && isset($target_node->type) ? $target_node->type : NULL;
     if ($target_node->nid) {
-      if (LingotekApi::instance()->updateContentDocument(LingotekEntity::load($target_node))) {
+      if (LingotekApi::instance()->updateContentDocument(LingotekEntity::load($target_node, $entity_type))) {
         drupal_set_message(t('This node has been upgraded to use advanced content parsing.'));
       }
       else {
@@ -592,7 +593,7 @@ function lingotek_mark_phases_complete($form, $form_state, $node, $document = NU
       );
     }
     else {
-      LingotekLog::error('Unable to build mark as complete form: could not get progress data from API.');
+      LingotekLog::error('Unable to build mark as complete form: could not get progress data from API.', array());
     }
   }
 

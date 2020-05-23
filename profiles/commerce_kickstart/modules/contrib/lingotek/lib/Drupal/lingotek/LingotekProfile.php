@@ -553,6 +553,7 @@ class LingotekProfile {
         'profile' => LingotekSync::PROFILE_ENABLED,
       );
     }
+
     if (empty(self::$profiles[$this->getId()])) {
       drupal_set_message(t('Lingotek profile ID @profile_id not found.', array('@profile_id' => $this->getId())), 'error', FALSE);
 

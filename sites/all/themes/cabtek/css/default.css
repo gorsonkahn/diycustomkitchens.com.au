@@ -99,7 +99,7 @@ fieldset.commerce_payment.form-wrapper {
 }
 
 fieldset.commerce_payment.form-wrapper .form-item-commerce-payment-payment-method {
-  display: none
+  /* display: none */
 }
 
 .comments .comment {
@@ -324,7 +324,7 @@ CART VIEWS
 
 .cart-footer {
   border-radius: 4px;
-  text-align: center;
+  text-align: right;
   padding: 0.5rem 0.5rem 0.5rem 3rem;
   margin-top: 1rem;
   font-size: 0.9rem;

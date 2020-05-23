@@ -69,7 +69,13 @@ lingotek.forms = lingotek.forms || {};
         }
         else {
           // The language must not be enabled for Lingotek at all.
-          $('#edit-lingotek-profile').val('DISABLED');
+          // First check if langcode is default language, if it is, use default profile
+          // otherwise initialize to disables
+          if (langcode == $('#lingotek-system-default').val()) {
+            $('#edit-lingotek-profile').val(profiles_by_langcode['DEFAULT']);
+          } else {
+            $('#edit-lingotek-profile').val('DISABLED');
+          }
         }
       }
     }

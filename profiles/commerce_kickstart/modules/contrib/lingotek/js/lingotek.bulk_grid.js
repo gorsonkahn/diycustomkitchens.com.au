@@ -93,25 +93,25 @@ function lingotek_perform_action(nid, action) {
     }
   };
 
-  function addClickToDownloadReady() {
+  function add_click_to_download_ready() {
     original_download_ready_URL = $('#download-ready').attr('href');
     $('#download-ready').click(function () {
-      modifyActionButtonURL('#download-ready', original_download_ready_URL);
+      modify_action_button_url('#download-ready', original_download_ready_URL);
     });
   }
 
-  function addClickToUploadButton() {
+  function add_click_to_upload_button() {
     original_upload_edited_URL = $('#upload-edited').attr('href');
     $('#upload-edited').click(function () {
-      modifyActionButtonURL('#upload-edited', original_upload_edited_URL);
+      modify_action_button_url('#upload-edited', original_upload_edited_URL);
     });
   }
 
   this.check_box_count = 0;
-  function addClickToCheckboxes() {
+  function add_click_to_checkboxes() {
     $('#edit-grid-container .form-checkbox').each(function () {
       $(this).change(function (event) {
-        clarifyButtonsForCheckboxes(event);
+        clarify_buttons_for_checkboxes(event);
       });
     });
   }
@@ -119,9 +119,9 @@ function lingotek_perform_action(nid, action) {
   //changes the href associated with the download/upload buttons after they are clicked
   //but before the links are actually followed. Also checks to see if the results are
   //filtered.
-  function modifyActionButtonURL(element_id, original_URL) {
+  function modify_action_button_url(element_id, original_URL) {
     var new_URL = original_URL.valueOf();//clones the original
-    var entity_ids = getIDArray();
+    var entity_ids = get_id_array();
     var id_string = entity_ids.join(",");
     new_URL += entity_ids.length !== 0 ? "/" + entity_ids.join(",") : "";
     new_URL = entity_ids.length === 0 ? original_URL : new_URL;
@@ -130,7 +130,7 @@ function lingotek_perform_action(nid, action) {
 
   //looks at every currently displayed row and pushes the entity_id of each
   //row with a checked checkbox into the return variable
-  function getIDArray(visible_check) {
+  function get_id_array(visible_check) {
     var entity_ids = [];
     var visible = visible_check === true;
     $('#edit-grid-container .form-checkbox').each(function () {
@@ -144,7 +144,7 @@ function lingotek_perform_action(nid, action) {
     return entity_ids;
   }
 
-  function clarifyButtonsForFilter() {
+  function clarify_buttons_for_filter() {
     $('.notify-checked-action').hide();
     $('#upload-edited').attr('title', 'Re-upload all edited source content');
     $('#download-ready').attr('title', 'Download Ready translations');
@@ -160,7 +160,7 @@ function lingotek_perform_action(nid, action) {
     }
   }
 
-  function clarifyButtonsForCheckboxes(event) {
+  function clarify_buttons_for_checkboxes(event) {
     var box_checked = $(event.target).attr('checked');
     //accounts for the select all box
     if ($(event.target).val() === 'on' && box_checked) {
@@ -183,14 +183,14 @@ function lingotek_perform_action(nid, action) {
       return false;
     }
     else {
-      clarifyButtonsForFilter();
+      clarify_buttons_for_filter();
     }
   }
 
   //guarantees that search and actions fields will match in width. Looks nicer,
   //can't do this simply with css, because the actions dropdown's width may change
   //based on its content
-  function alignFields() {
+  function align_fields() {
     var common_width = $('#edit-select-actions').width();
     var padding_top = $('#edit-select-actions').css('padding-top');
     var padding_bottom = $('#edit-select-actions').css('padding-bottom');
@@ -201,7 +201,7 @@ function lingotek_perform_action(nid, action) {
     $('#edit-search').css('min-height', height);
   }
 
-  function setupToggleMarked() {
+  function setup_toggle_marked() {
     $('.ltk-marked-checkbox').bind('click',function(){
       var $self = $(this);
       var url = $self.attr('href');
@@ -307,7 +307,7 @@ function lingotek_perform_action(nid, action) {
       $('.emptyTD',parent).removeClass();
   }
 
-  function updateRowStatus(data, row, entity_id) {
+  function update_row_status(data, row, entity_id) {
     //if the row does not yet have status indicators
     if($('.emptyTD',row).length > 0){
       update_empty_cells(data, row, entity_id);
@@ -445,7 +445,7 @@ function lingotek_perform_action(nid, action) {
     });
   }
 
-  function updateStatusIndicators(data) {
+  function update_status_indicators(data) {
     //the checkboxes always have the row's entity id
     $('#edit-grid-container .form-checkbox').each(function () {
       var entity_id = $(this).val();
@@ -453,12 +453,12 @@ function lingotek_perform_action(nid, action) {
         var parent = $(this).closest('tr');
         //this creates the random fill in effect, not sure if its a keeper
         var i = Math.floor((Math.random() * 7) + 1);
-        setTimeout(updateRowStatus,300 * i,data,parent,entity_id);
+        setTimeout(update_row_status,300 * i,data,parent,entity_id);
       }
     });
   }
 
-  function pollTranslationStatus(){
+  function poll_translation_status(){
     // Prevent jumping to top of page when source icons are clicked.
     $('.ltk-source-icon.source-none').click(function(e) {
       e.preventDefault();
@@ -484,13 +484,13 @@ function lingotek_perform_action(nid, action) {
           dataType: 'json',
           success: function (data) {
             if (data !== null) {
-              updateStatusIndicators(data);
+              update_status_indicators(data);
             }
           }
         });
       }, 10000);
   }
-  function pollAutomaticDownloads(){
+  function poll_automatic_downloads(){
     //config section does not have profiles, so automatic downloads should not
     //happen
     if($('#entity-type').val() === 'config'){
@@ -503,23 +503,23 @@ function lingotek_perform_action(nid, action) {
         });
       }, 30000);
   }
-  function configShowMoreOptions(){
+  function config_show_more_options(){
     $('#more-options').toggleClass('more-options-flip');
     $('#force-down').toggle();
   }
-  function setupConfigMoreOptions() {
+  function setup_config_more_options() {
     $('#force-down').hide();
-    $('#more-options').click(configShowMoreOptions);
+    $('#more-options').click(config_show_more_options);
   }
   $(document).ready(function () {
-    setupConfigMoreOptions();
-    alignFields();
-    setupToggleMarked();
-    pollTranslationStatus();
-//    pollAutomaticDownloads();
-    addClickToDownloadReady();
-    addClickToUploadButton();
-    addClickToCheckboxes();
-    clarifyButtonsForFilter();
+    setup_config_more_options();
+    align_fields();
+    setup_toggle_marked();
+    poll_translation_status();
+//    poll_automatic_downloads();
+    add_click_to_download_ready();
+    add_click_to_upload_button();
+    add_click_to_checkboxes();
+    clarify_buttons_for_filter();
   });
 })(jQuery);

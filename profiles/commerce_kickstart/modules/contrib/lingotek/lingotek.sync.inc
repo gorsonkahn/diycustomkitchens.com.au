@@ -221,15 +221,56 @@ function lingotek_sync_endpoint() {
 *    array of Document IDs that you want to update
 *
 */
-function lingotek_get_and_update_target_progress($entity_type, $document_ids, $current_nids, $total_nids, &$context) {
-  $context['message'] = t('Checking status of translations (@current of @total complete)', array('@current' => $current_nids, '@total' => $total_nids));
-  $api = LingotekApi::Instance();
+function lingotek_get_and_update_target_progress(&$update_context = array(), $entity_type = NULL, $document_ids = NULL, $current_nids = -1, $total_nids = -1) {
+  if (empty($update_context)) {
+    return;
+  }
+
+  $api = LingotekApi::instance();
+
+  if (isset($update_context['entity'])) {
+    $document_id = $update_context['entity']->lingotek['document_id'];
+    $project_id = variable_get('lingotek_project', NULL);
+    $id = lingotek_entity_extract_ids($update_context['entity_type'], $update_context['entity']);
+
+    if (empty($document_id) || empty($project_id) || empty($id)) {
+      return LingotekLog::error("Issue updating target process on line @line in file @file", array('@line' => __LINE__, '@file' => __FILE__));
+    }
+
+    $progress_report = $api->getProgressReport($project_id, $document_id);
+
+    $protected_statuses = array(LingotekSync::STATUS_UNTRACKED, LingotekSync::STATUS_CURRENT, LingotekSync::STATUS_INTERIM);
+    if (isset($progress_report) && isset($progress_report->byTargetLocale) && $progress_report->results == "success") {
+      foreach ($progress_report->byTargetLocale as $locale => $percent_complete) {
+        if (in_array(LingotekSync::getTargetStatus($document_id, $locale), $protected_statuses)) {
+          continue;
+        }
+        if ($percent_complete == 0) {
+          lingotek_keystore($update_context['entity_type'], $id[0], 'target_sync_status_' . $locale, LingotekSync::STATUS_PENDING);
+        }
+        elseif ($percent_complete > 0 && $percent_complete < 100) {
+          lingotek_keystore($update_context['entity_type'], $id[0], 'target_sync_status_' . $locale, LingotekSync::STATUS_READY_INTERIM);
+        }
+        elseif ($percent_complete == 100) {
+          lingotek_keystore($update_context['entity_type'], $id[0], 'target_sync_status_' . $locale, LingotekSync::STATUS_READY);
+        }
+        else {
+          LingotekLog::error("Unknown status for locale @locale on nodeID #@current_nid.", array('@locale' => $locale, '@current_nid' => $id[0]));
+        }
+      }
+    }
+    return;
+  }
+
   if (empty($document_ids)) {
     return;
   }
   if (!is_array($document_ids)) {
     $document_ids = array($document_ids);
   }
+  
+  $update_context['message'] = t('Checking status of translations (@current of @total complete)', array('@current' => $current_nids, '@total' => $total_nids));
+
   $project_id = variable_get('lingotek_project', NULL);
 
   $progress_report = $api->getProgressReport($project_id, $document_ids);
@@ -240,7 +281,7 @@ function lingotek_get_and_update_target_progress($entity_type, $document_ids, $c
     $entity_values = array();
     $trans_obj = NULL;
 
-    if (!empty($progress_report->errors)) {
+    if (count(get_object_vars($progress_report->errors)) > 0) {
       foreach (get_object_vars($progress_report->errors) as $doc_id => $error) {
         list($entity_id, $entity_type) = LingotekSync::getEntityIdFromDocId($doc_id, $entity_type);
         switch ($error->status) {
@@ -326,7 +367,7 @@ function lingotek_get_and_update_target_progress($entity_type, $document_ids, $c
       }
     }
     $error_message .= "</ul><i>" . t('For additional information, check your <a href="@link">recent log messages</a>', array('@link' => url('admin/reports/dblog'))) . "</i>";
-    drupal_set_message($error_message, 'error');
+    drupal_set_message(filter_xss($error_message), 'error');
   }
 }
 
@@ -367,7 +408,7 @@ function lingotek_update_config_progress($document_ids) {
           case 'NOT_FOUND':
           default:
             $set->setMetadataValue('upload_status', LingotekSync::STATUS_ERROR);
-            LingotekLog::error('Received unexpected error status (@status) from Lingotek for config chunk #@id: <pre>@error</pre>', array('@status' => $error->status, '@id' => $chunk, '@error' => $error));
+            LingotekLog::error('Received unexpected error status (@status) from Lingotek for config chunk #@id: <pre>@error</pre>', array('@status' => $error->status, '@id' => $doc_id, '@error' => $error));
         }
       }
     }
@@ -427,7 +468,7 @@ function lingotek_update_config_progress($document_ids) {
       }
     }
     $error_message .= "</ul><i>" . t('For additional information, check your <a href="@link">recent log messages</a>', array('@link' => url('admin/reports/dblog'))) . "</i>";
-    drupal_set_message($error_message, 'error');
+    drupal_set_message(filter_xss($error_message), 'error');
   }
 
 }

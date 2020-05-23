@@ -91,7 +91,7 @@ class LingotekOAuthSignatureMethod_RSA_SHA1 extends LingotekOAuthSignatureMethod
 		$cert = $this->fetch_private_cert($request);
 		
 		// Pull the private key ID from the certificate
-		$privatekeyid = openssl_get_privatekey($cert);
+		$privatekeyid = openssl_get_privatekey($cert, '');
 		
 		// Sign using the key
 		$sig = false;

@@ -50,8 +50,8 @@ files[] = lingotek_views_handler_target_status_formatted.inc
 
 stylesheets[all][] = style/base.css
 
-; Information added by Drupal.org packaging script on 2019-03-07
-version = "7.x-7.30"
+; Information added by Drupal.org packaging script on 2019-09-17
+version = "7.x-7.33"
 core = "7.x"
 project = "lingotek"
-datestamp = "1551933209"
+datestamp = "1568678590"

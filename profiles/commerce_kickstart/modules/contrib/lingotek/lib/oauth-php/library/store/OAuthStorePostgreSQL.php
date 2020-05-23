@@ -99,7 +99,7 @@ class OAuthStorePostgreSQL extends OAuthStoreAbstract
             else {
 
                 // Try the default  pg connect
-                $this->conn = pg_connect();
+                $this->conn = pg_connect("");
             }
 
             if ($this->conn === false)

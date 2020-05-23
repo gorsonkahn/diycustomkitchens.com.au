@@ -89,6 +89,16 @@ plugins@mailjet.com
 
 Changelog
 ---------
+
+#### 7.x-2.22 13 September 2019
+* Fix Drupal account custom fields sync to Mailjet
+
+#### 7.x-2.21 27 August 2019
+* Add possibility to sync custom profile fields along with the user's `name` either on initial and single contact sync
+
+#### 7.x-2.20 22 August 2019
+* Bugfixes and internal improvements regarding single contact sync
+
 #### 7.x-2.19 18 February 2019
 * Bugfixes and internal improvements regarding contacts sync, subscription and unsibscription of contacts
 * Updated texts and translations

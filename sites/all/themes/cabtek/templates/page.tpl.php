@@ -1,38 +1,45 @@
 <div id="page" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if ($page['page_first']): ?>
-  <div id="page_top">
-    <div class="container"> <?php print render($page['page_first']) ?> </div>
-  </div>
-  <?php endif; ?>
+  
   <!-- ______________________ HEADER _______________________ -->
   
   <header id="header">
-    <div class="container"> <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home" id="logo"><span>DIY</span><span id="logo-sub">Custom<br>Kitchens</span></a>
-      <?php if ($site_name || $site_slogan): ?>
-      <?php if ($site_name): ?>
-      <?php if ($title): ?>
-      <div id="site-name"> <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home"><?php print $site_name; ?></a> </div>
-      <?php else: /* Use h1 when the content title is empty */ ?>
-      <h1 id="site-name"> <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" rel="home"><?php print $site_name; ?></a> </h1>
+   
+    <?php if ($page['header_first']): ?>
+      <div class="header-first">
+        <?php print render($page['header_first']) ?>
+      </div>
+    <?php endif; ?>
+
+    <div class="container">
+      <?php if ($page['header_second']): ?>
+        <div class="header-second">
+            <?php print render($page['header_second']); ?>
+      </div>
       <?php endif; ?>
-      <?php endif; ?>
-      <?php if ($site_slogan): ?>
-      <div id="site-slogan"><?php print $site_slogan; ?></div>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php if ($page['header']): ?>
-      <div id="header-region"> <?php print render($page['header']); ?> </div>
+
+      <?php if ($page['header_third']): ?>
+        <div class="header-third">
+          <?php print render($page['header_third']); ?>
+        </div>
       <?php endif; ?>
     </div>
+
+    <?php if ($page['navbar']): ?>
+      <nav id="navigation" class="menu">
+        <div class="container">
+          <?php print render($page['navbar']); ?>
+        </div>
+      </nav>
+    <?php endif; ?>
   </header>
   <!-- /header -->
   
   <?php if ($main_menu): ?>
-  <nav id="navigation" class="menu">
+  <!-- <nav id="navigation" class="menu">
     <div class="container">
-    	<?php print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('main-menu')))); ?>
+    	<?php //print theme('links', array('links' => $main_menu, 'attributes' => array('id' => 'primary', 'class' => array('main-menu')))); ?>
     </div>
-  </nav>
+  </nav> -->
   <!-- /navigation -->
   <?php endif; ?>
   

@@ -185,7 +185,7 @@ class LingotekDocument {
    */
   public static function load($document_id) {
     $document_id = $document_id;
-    if (empty($documents[$document_id])) {
+    if (empty(self::$documents[$document_id])) {
       $document = new LingotekDocument($document_id);
       $document->setApi(LingotekApi::instance());
       $documents[$document_id] = $document;

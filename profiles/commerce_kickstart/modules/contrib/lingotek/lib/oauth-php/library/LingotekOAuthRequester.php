@@ -458,9 +458,10 @@ class LingotekOAuthRequester extends LingotekOAuthRequestSigner
 		@list($headers,$body) = explode("\r\n\r\n",$response,2);
 		$lines = explode("\r\n",$headers);
 
-		if (preg_match('@^HTTP/[0-9]\.[0-9] +100@', $lines[0]))
+		while (preg_match('@^HTTP/[0-9]\.[0-9] +100@', $lines[0]) ||
+					 preg_match('@^HTTP/[0-9]\.[0-9] +200 +Connection established@', $lines[0]))
 		{
-			/* HTTP/1.x 100 Continue
+			/* HTTP/1.x 100 Continue or HTTP/1.x 200 Connection established
 			 * the real data is on the next line
 			 */
 			@list($headers,$body) = explode("\r\n\r\n",$body,2);

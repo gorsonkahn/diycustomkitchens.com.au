@@ -30,7 +30,7 @@ function empire_form_alter($form, $form_state, $form_id){
 
  function empire_commerce_checkout_page_info_alter(&$checkout_pages) {
   // change Submit button on last page so it doesn't say "Continue to next step"
-  $checkout_pages['review']['submit_value'] = 'Make secure payment';
+  //$checkout_pages['review']['submit_value'] = 'Make secure payment';
 }
 
 

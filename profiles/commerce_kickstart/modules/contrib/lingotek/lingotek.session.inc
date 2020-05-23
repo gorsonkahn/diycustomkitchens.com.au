@@ -299,7 +299,7 @@ class LingotekSession {
     }
     else {
       $this->logged_in = TRUE;
-      LingotekLog::error('Unable to log out.');
+      LingotekLog::error('Unable to log out.', array());
     }
   }
 

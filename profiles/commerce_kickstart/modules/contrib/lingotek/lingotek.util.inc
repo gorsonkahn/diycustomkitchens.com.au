@@ -280,7 +280,7 @@ function lingotek_get_enabled_fields($entity_type, $bundle) {
   $fields_desired = isset($translate[$entity_type][$bundle]) ? $translate[$entity_type][$bundle] : array();
   if (empty($fields_desired)) {
     //this won't work for anything more than nodes yet
-    $fields_desired = lingotek_get_translatable_fields_by_content_type($bundle);
+    $fields_desired = lingotek_get_translatable_fields_by_content_type($entity_type, $bundle);
   }
 
   return $fields_desired;
@@ -370,7 +370,7 @@ function lingotek_entity_xml_body($entity_type, $entity) {
     drupal_alter('lingotek_entity_upload', $hook_params);
   }
   catch (Exception $e) {
-    LingotekLog::error("Failed to parse or modify XML before uploading. Error: @error. Text: !xml.", array('!xml' => $text, '@error' => $e->getMessage()));
+    LingotekLog::error("Failed to parse or modify XML before uploading. Error: @error. Text: !xml.", array('!xml' => $content_obj, '@error' => $e->getMessage()));
   }
 
   return $content_obj->asXML();
@@ -481,8 +481,8 @@ function lingotek_xml_fields($entity_type, $entity, $translatable_fields, $langu
     lingotek_keystore($entity_type, $id, 'invalid_xml', LingotekSync::INVALID_XML_PRESENT);
     lingotek_keystore($entity_type, $id, 'last_sync_error', 'Entity contains invalid XML characters');
     LingotekSync::setUploadStatus($entity_type, $id, LingotekSync::STATUS_ERROR);
-    LingotekLog::error(t('Invalid XML characters in entity !entity_type (!id): @xml',
-                        array('@xml' => $content_obj->asXML(), '!entity_type' => $entity_type, '!id' => $id)));
+    LingotekLog::error(t('Invalid XML characters in entity !entity_type (!id): @xml'),
+                        t(array('@xml' => $content_obj->asXML(), '!entity_type' => $entity_type, '!id' => $id)));
   }
   else {
     lingotek_keystore_delete($entity_type, $id, 'invalid_xml');
@@ -1890,7 +1890,7 @@ function lingotek_entity_translation_save_status($entity_type, $entity, $languag
     sleep($i+1);
   }
   if (!$acquired) {
-    LingotekLog::error("Failed to obtain lock to write Entity Translation status.");
+    LingotekLog::error("Failed to obtain lock to write Entity Translation status.", array());
     return array($languages_updated, $updates);
   }
   list($id, $vid, $bundle) = lingotek_entity_extract_ids($entity_type, $entity);
@@ -2888,6 +2888,58 @@ function lingotek_delete_field_translations($entity_type, $entity) {
     }
   }
   entity_save($entity_type, $entity);
+  lingotek_entity_translation_delete_translations($entity_type, $entity);
+}
+
+/**
+ * Delete local translations from the Entity Translation table
+ */
+function lingotek_entity_translation_delete_translations($entity_type, $entity) {
+
+  global $user;
+  if (!module_exists('entity_translation') || !entity_translation_enabled($entity_type)) {
+    return;
+  }
+  if ($entity_type == 'node' && !entity_translation_node_supported_type($entity->type)) {
+    return;
+  }
+
+  // Lock reading for writing to the entity translation table
+  // since many ET entries may be written concurrently
+  for ($i = 0; $i < 10; $i++) {
+    $acquired = lock_acquire('lingotek_entity_translation');
+    if ($acquired) {
+      break;
+    }
+    sleep($i+1);
+  }
+
+  if (!$acquired) {
+    LingotekLog::error("Failed to obtain lock to write Entity Translation status.", array());
+    return;
+  }
+
+  list($id, $vid, $bundle) = lingotek_entity_extract_ids($entity_type, $entity);
+  $source_langcode = array(lingotek_entity_langcode($entity_type, $entity));
+
+  try {
+    db_delete('entity_translation')
+    ->condition('entity_type', $entity_type)
+    ->condition('entity_id', $id)
+    ->condition('language', $source_langcode, 'NOT IN')
+    ->execute();
+
+    db_delete('entity_translation_revision')
+    ->condition('entity_type', $entity_type)
+    ->condition('entity_id', $id)
+    ->condition('language', $source_langcode, 'NOT IN')
+    ->execute();
+  }
+  catch (PDOException $e) {
+    LingotekLog::error("Failed to delete translation from entity", array());
+  }
+  lock_release('lingotek_entity_translation');
+  return;
 }
 
 function lingotek_delete_menu_link_translations($mlids) {
@@ -2901,7 +2953,6 @@ function lingotek_delete_menu_link_translations($mlids) {
     foreach ($translations as $langcode => $menu_link) {
       $translation_mlid = $menu_link['mlid'];
       if ($translation_mlid != $mlid) {
-        $count += 1;
         menu_link_delete($translation_mlid);
         $lingotek_locale = Lingotek::convertDrupal2Lingotek($langcode);
         $status = LingotekSync::getMenuLinkTargetStatus($mlid, $lingotek_locale);

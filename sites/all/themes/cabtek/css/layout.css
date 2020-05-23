@@ -11,23 +11,18 @@ html {
 /*
  HEADER REGION
  */
-/* HEADER BAR */
-#header {
-  clear: both;
-  margin: 0.3rem 0.5rem 0.5rem 0.3rem
-}
 
 #site-name {
   font-size: 2.2em;
   line-height: 1.3em;
-  font-weight: 300
+  font-weight: 300;
 }
 
 #logo {
   margin-top: 0.5em;
   width: 100%;
   display: block;
-  color: #e74c3c
+  color: #e74c3c;
 }
 
 a#logo span {
@@ -42,29 +37,11 @@ a#logo span {
   font-weight: normal;
 }
 
-#header-region {
-  width: 100%;
-  padding-left: 0.2rem
-}
-
-#header-region .views-exposed-widgets {
-  display: flex;
-}
-
-#header-region .views-exposed-widgets #edit-search-api-views-fulltext-wrapper,
-#header-region .views-exposed-widgets .form-text {
-  width: 100%
-}
-
-#header-region .views-exposed-widgets .views-submit-button {
-  padding: 8px 0 0 0;
-}
-
 /*
 END OF HEADER
  */
 .container {
-  max-width: 68rem;
+  max-width: 78rem;
   margin: 0 auto;
   width: auto;
 }
@@ -75,7 +52,7 @@ END OF HEADER
 }
 
 .container-24 {
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .block-gallery {
@@ -87,13 +64,8 @@ END OF HEADER
 }
 
 @media screen and (min-width: 45em) {
-  #header .container {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .container-24 {
-    margin-bottom: 2rem
+    margin-bottom: 2rem;
   }
 
   .no-sidebars #content {
@@ -109,14 +81,13 @@ END OF HEADER
 
   .flex-wrapper {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
 
   .col-4 {
     width: 24%;
-    margin: 0 1% 1% 0
+    margin: 0 1% 1% 0;
   }
-
 }
 
 @media screen and (min-width: 60em) {
@@ -241,7 +212,7 @@ END OF HEADER
     margin-right: 3.22581%;
     width: 22.58065%;
     margin-left: -77.41935%;
-    padding-top: 1rem
+    padding-top: 1rem;
   }
 
   #sidebar-first:last-child {
@@ -273,7 +244,6 @@ END OF HEADER
 
 #sidebar-second {
   width: 100%;
-
 }
 
 @media screen and (min-width: 45em) {
@@ -283,7 +253,7 @@ END OF HEADER
     margin-right: 3.22581%;
     width: 22.58065%;
     margin-left: 0%;
-    padding-top: 1rem
+    padding-top: 1rem;
   }
 
   #sidebar-second:last-child {

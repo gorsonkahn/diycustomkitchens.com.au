@@ -54,7 +54,7 @@ class LingotekOAuthSignatureMethod_MD5 extends LingotekOAuthSignatureMethod
 	 */
 	function signature ( $request, $base_string, $consumer_secret, $token_secret )
 	{
-		$s  .= '&'.$request->urlencode($consumer_secret).'&'.$request->urlencode($token_secret);
+		// $string = '&'.$request->urlencode($consumer_secret).'&'.$request->urlencode($token_secret); Not being used
 		$md5 = md5($base_string);
 		$bin = '';
 		

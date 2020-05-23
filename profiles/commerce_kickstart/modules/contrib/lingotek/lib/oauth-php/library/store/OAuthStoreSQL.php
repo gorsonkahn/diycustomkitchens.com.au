@@ -92,13 +92,6 @@ abstract class OAuthStoreSQL extends OAuthStoreAbstract
 				throw new OAuthException2('Could not connect to MySQL database: ' . mysql_error());
 			}
 
-			if (isset($options['database']))
-			{
-				if (!mysql_select_db($options['database'], $this->conn))
-				{
-					$this->sql_errcheck();
-				}
-			}
 			$this->query('set character set utf8');
 		}
 	}

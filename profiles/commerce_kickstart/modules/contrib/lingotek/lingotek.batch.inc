@@ -235,7 +235,7 @@ function lingotek_get_sync_download_batch_elements($download_targets = NULL, $sy
       $query->condition($status_or);
       $result = $query->execute();
       while ($record = $result->fetchAssoc()) {
-        $operations[] = array('lingotek_entity_download', array($record['entity_id'], 'node', $lingotek_locale));
+        $operations[] = array('lingotek_entity_download', array($record['entity'], 'node', $lingotek_locale));
       }
       // get all config sets that have pending translations
       $key = 'target_sync_status_' . $lingotek_locale;
@@ -258,7 +258,8 @@ function lingotek_get_sync_download_batch_elements($download_targets = NULL, $sy
       if ($id != NULL) {
         $lingotek_locale = $download_target->locale;
         $doc_ids[] = $download_target->document_id;
-        $operations[] = array('lingotek_entity_download', array($id, $entity_type, $lingotek_locale));
+        $entity = lingotek_entity_load_single($entity_type, $id);
+        $operations[] = array('lingotek_entity_download', array($entity, $entity_type, $lingotek_locale));
       }
       else { // since no node was found associated with the document ID, check config chunks
         $sid = LingotekConfigSet::getIdByDocId($download_target->document_id);
@@ -692,7 +693,7 @@ function lingotek_update_target_progress_batch_create($entity_type, $nids) {
   do {
     $segment = array_slice($document_ids, $offset, $offset_interval, TRUE);
     if ($segment_count = count($segment)) {
-      $operations[] = array('lingotek_get_and_update_target_progress', array($entity_type, $segment, $offset, $total_count));
+      $operations[] = array('lingotek_get_and_update_target_progress', array(['context' => NULL], $entity_type, $segment, $offset, $total_count));
     }
     $offset += $offset_interval;
   } while (count($segment) >= $offset_interval);
@@ -744,7 +745,7 @@ function lingotek_add_language_specific_targets_finished($success, $results) {
   else {
     drupal_set_message(filter_xss($message), 'error');
   }
-  if (isset($result['language_specific_target_errors'])) {
+  if (isset($results['language_specific_target_errors'])) {
     $message = format_plural($results['language_specific_target_errors'], t('Failed to add 1 language-specific profile.'), t('Failed to add @num language-specific translations.', array('@num' => (int) $results['language_specific_target_errors'])));
   }
   else {

@@ -5,8 +5,10 @@ core = "7.x"
 project = "cabtek"
 engine = phptemplate
 
-regions[page_first] = Page first
-regions[header] = Header
+regions[header_first] = Header first
+regions[header_second] = Header second
+regions[header_third] = Header third
+regions[navbar] = Navbar
 regions[content_super] = Content super
 regions[highlighted] = Highlighted
 regions[help] = Help

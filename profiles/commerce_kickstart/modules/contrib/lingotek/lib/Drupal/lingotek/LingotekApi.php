@@ -263,7 +263,7 @@ class LingotekApi {
    * @return bool
    *   TRUE on success, FALSE on failure.
    */
-  public function updateContentDocument($translatable_object) {
+  public function updateContentDocument(LingotekTranslatableEntity $translatable_object) {
 
     $parameters['documentId'] = $translatable_object->getMetadataValue('document_id');
     $parameters['documentName'] = $translatable_object->getDocumentName();
@@ -829,13 +829,16 @@ class LingotekApi {
       return $projects;
     }
 
-    if ($projects_raw = $this->request('listProjects')) {
-      $projects = array();
-      foreach ($projects_raw->projects as $project) {
-        $projects[$project->id] = $project->name;
-      }
-      variable_set('lingotek_project_defaults', $projects);
+    $response = $this->request('listProjects');
+    if (empty($response) || $response->results == 'fail') {
+      return FALSE;
     }
+
+    $projects = array();
+    foreach ($response->projects as $project) {
+      $projects[$project->id] = $project->name;
+    }
+    variable_set('lingotek_project_defaults', $projects);
 
     return $projects;
   }
@@ -1034,7 +1037,7 @@ class LingotekApi {
     $credentials = is_null($credentials) ? array(
       'consumer_key' => variable_get('lingotek_oauth_consumer_id', ''),
       'consumer_secret' => variable_get('lingotek_oauth_consumer_secret', '')
-        ) : $credentials;
+      ) : $credentials;
 
     $timer_name = $method . '-' . microtime(TRUE);
     timer_start($timer_name);
@@ -1049,7 +1052,26 @@ class LingotekApi {
       // The error:  Warning: rawurlencode() expects parameter 1 to be string, array given in LingotekOAuthRequest->urlencode() (line 619 of .../modules/lingotek/lib/oauth-php/library/LingotekOAuthRequest.php).
       // The thing is, if you encode the params, they just get translated back to an array by the object.  They have some type of error internal to the object code that is handling things wrong.
       // I couldn't find a way to get around this without changing the library.  For now, I am just supressing the warning w/ and @ sign.
-      $result = $request->doRequest(0, array(CURLOPT_SSL_VERIFYPEER => FALSE));
+      $curl_options = array(CURLOPT_SSL_VERIFYPEER => FALSE);
+
+      // Check and add proxy settings if needed
+      $proxy_server = variable_get('proxy_server', '');
+      if (!empty($proxy_server)) {
+        $curl_options[CURLOPT_PROXY] = $proxy_server;
+        $proxy_port = variable_get('proxy_port', 8080);
+        $curl_options[CURLOPT_PROXYPORT] = $proxy_port;
+        // Proxy user/password
+        $proxy_username = variable_get('proxy_username', '');
+        if (!empty($proxy_username)) {
+          $proxy_password = variable_get('proxy_password', '');
+          $str_usr_pwd = "{$proxy_username}:{$proxy_password}";
+          $curl_options[CURLOPT_PROXYUSERPWD] = $str_usr_pwd;
+          $proxy_auth_method = variable_get('proxy_auth_method', CURLAUTH_BASIC);
+          $curl_options[CURLOPT_PROXYAUTH] = $proxy_auth_method;
+        }
+      }
+
+      $result = $request->doRequest(0, $curl_options);
       $response = json_decode($result['body']);
     } catch (OAuthException2 $e) {
       LingotekLog::error('Failed OAuth request. <br />Method: @method <br />Message: @message

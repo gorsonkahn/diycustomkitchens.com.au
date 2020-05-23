@@ -510,7 +510,6 @@ function lingotek_filters_popup($entity_type) {
 }
 
 function lingotek_popup($form_id, $entity_type = 'node', $entity_ids = array(), $extra = "") {
-  $second_run = !empty($form_state['executed']);
   ctools_include('node.pages', 'node', '');
   ctools_include('modal');
   ctools_include('ajax');
@@ -1226,17 +1225,21 @@ function lingotek_grid_automatic_download($entity_type) {
     }
   }
 }
+
 function lingotek_grid_download_selected($entity_type, $entity_ids, $target_locales) {
   $operations = array();
   $entities = entity_load($entity_type, $entity_ids);
   $all_target_locales = $target_locales;
   foreach ($entities as $entity) {
+    $update_context = ['entity' => $entity, 'entity_type' => $entity_type];
+    $operations[] = array('lingotek_get_and_update_target_progress', array($update_context));
     $target_locales = $all_target_locales; // must reset $target_locales to the original array or else some target languages may be skipped during download
     if (variable_get('lingotek_enable_language_specific_profiles')) {
       // Filter out the target languages that should not be included for this entity.
       $profile = LingotekProfile::loadByEntity($entity_type, $entity);
       $target_locales = array_keys($profile->filterTargetLocales($target_locales));
     }
+
     foreach ($target_locales as $locale) {
       // Skip language neutral taxonomy terms because their source is really English.
       if ($entity_type == 'taxonomy_term' && $entity->language == LANGUAGE_NONE && $locale == 'en_US') {
@@ -1307,7 +1310,7 @@ function lingotek_grid_download_ready($entity_type, $comma_separated_ids = NULL)
     foreach ($targets as $target) {
       if (isset($entities[$target['id']]) &&
           $entities[$target['id']]->lingotek['profile'] != LingotekSync::PROFILE_DISABLED) { // exclude nodes with PROFILE_DISABLED
-        $operations[] = array('lingotek_entity_download', array($target['id'], $entity_type, $target['locale']));
+        $operations[] = array('lingotek_entity_download', array($entities[$target['id']], $entity_type, $target['locale']));
       }
     }
     $redirect = 'admin/settings/lingotek/manage/' . $entity_type;
@@ -2859,11 +2862,9 @@ function lingotek_grid_create_progress_bar($progress) {
  * Returns a fully rendered html form
  */
 function lingotek_disassociate_nodes($entity_type, $entity_ids) {
-  $second_run = !empty($form_state['executed']);
-
   $entity_ids = !is_array($entity_ids) ? explode(',', $entity_ids) : $entity_ids;
 
-  if (count($entity_ids) > 1 && !$second_run) {
+  if (count($entity_ids) > 1) {
     drupal_set_message(format_plural(count($entity_ids), 'You will be disassociating translations for one entity.', 'You will be disassociating translations for @count entities'), 'warning');
   }
 
@@ -3236,7 +3237,7 @@ function lingotek_entity_disassociate_form_submit($form, $form_state) {
   lingotek_keystore_delete_multiple($entity_type, $entity_ids, 'document_id');
   LingotekSync::setAllUploadStatuses($entity_type, $entity_ids, LingotekSync::STATUS_NONE);
   lingotek_keystore_delete_multiple($entity_type, $entity_ids, 'original_language');
-  lingotek_keystore_delete_multiple($entity_type, $entity_ids, 'source_language_%', 'LIKE');
+  LingotekSync::bulkSetAllTargetStatus($entity_type, $entity_ids, LingotekSync::STATUS_NONE);
   foreach ($entity_ids as $entity_id) {
     // find which translations exist on Drupal for the entity
     $existing_translations = lingotek_get_languages($entity_type, $entity_id);
@@ -3249,10 +3250,6 @@ function lingotek_entity_disassociate_form_submit($form, $form_state) {
         LingotekSync::setTargetStatus($entity_type, $entity_id, $locale, LingotekSync::STATUS_UNTRACKED);
         unset($target_locales[$locale]);
       }
-    }
-    // for each non-existent translation, remove the target status
-    foreach (array_keys($target_locales) as $locale) {
-      LingotekSync::deleteTargetStatus($entity_type, $entity_id, $locale);
     }
   }
 

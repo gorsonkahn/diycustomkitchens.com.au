@@ -120,7 +120,8 @@ function lingotek_process_entity_xml($xml, &$entity, $entity_type, $langcode, $n
   $enabled_with_translation = FALSE;
   $language_list = language_list('language');
   $source_entity = $entity;
-  $source_language = isset($source_language->language)? $source_language->language : language_default()->language;
+  global $language;
+  $source_language = $language->language;
 
   $hook_params = array(
     'entity_type' => $entity_type,
@@ -317,7 +318,7 @@ function lingotek_process_link_field_attributes($curr_field_data, $insert_array,
   if (isset($curr_field_data[language_default()->language])) {
     $link_attributes = $curr_field_data[language_default()->language][0]['attributes'];
   }
-  elseif (isset($current_field_data[LANGUAGE_NONE])) {
+  elseif (isset($curr_field_data[LANGUAGE_NONE])) {
     $link_attributes = $curr_field_data[LANGUAGE_NONE][0]['attributes'];
   }
   if (empty($link_attributes)) {

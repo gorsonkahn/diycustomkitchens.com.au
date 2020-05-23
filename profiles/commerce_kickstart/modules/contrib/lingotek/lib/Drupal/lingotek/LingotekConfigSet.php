@@ -823,7 +823,7 @@ class LingotekConfigSet implements LingotekTranslatableEntity {
     $metadata = $this->metadata();
     if (isset($metadata[$key])) {
       db_delete('lingotek_config_metadata')
-          ->condition('id', $this->sid)
+        ->condition('id', $this->sid)
         ->condition('config_key', $key, 'LIKE')
         ->execute();
     }

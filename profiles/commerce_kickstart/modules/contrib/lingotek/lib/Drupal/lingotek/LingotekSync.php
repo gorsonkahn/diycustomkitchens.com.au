@@ -409,14 +409,6 @@ class LingotekSync {
       }
     }
     return $return;
-
-    $sumArray = array();
-    foreach ($myArray as $k => $subArray) {
-      foreach ($subArray as $id => $value) {
-        $sumArray[$id]+=$value;
-      }
-    }
-    return $sumArray;
   }
 
   public static function getSourceCounts($lingotek_locale) {
@@ -1154,8 +1146,8 @@ class LingotekSync {
     $query = db_select('lingotek_entity_metadata', 'l')
         ->fields('l', array('nid'))
         ->condition('entity_type', 'node')
-        ->condition('entity_key', $key)
-        ->condition('value', $lingotek_document_ids, 'IN');
+        ->condition('entity_key', NULL) // The previous variable here was undefined. I simply placed NULL here to ensure that functionality is
+        ->condition('value', $lingotek_document_ids, 'IN'); // preserved; however, I suspect that we will be able to delete this function entirely
     $result = $query->execute()->fetchCol();
     return $result;
   }
