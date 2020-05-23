@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-size: 16px;
   line-height: 1.5em;
@@ -20,12 +20,12 @@ button {
 
 a:hover {
   color: #34495e;
-}
+} */
 
 /************ 
   PAGE TOP
 *************/
-#page_top {
+/* #page_top {
   border-top: 3px solid #e74c3c;
   border-bottom: 1px solid #e2e6e7;
 }
@@ -94,24 +94,24 @@ a:hover {
 
 .block-login .menu .create-account a {
   background-image: url(../images/optimized/icon-user-create-account.png);
-}
+} */
 
-#google_recaptcha_user_register_form,
+/* #google_recaptcha_user_register_form,
 #google_recaptcha_webform_client_form_25 {
   margin: 1rem 0;
-}
+} */
 
 /*
 KICKSRART OVERRIDES
 */
-body.toolbar #toolbar-home a span {
+/* body.toolbar #toolbar-home a span {
   background: transparent url(../logo-menu-diy.png) no-repeat 0 0;
   display: block;
   min-height: 40px;
   text-indent: -9999px;
   width: 130px;
   margin: 0;
-}
+} */
 
 /*
 END OF KICKSTART
@@ -120,11 +120,11 @@ END OF KICKSTART
 /*
 HEADER
 */
-#header {
+/* #header {
   background: #fff;
-}
+} */
 /* CABTEK ADMIN */
-.cabtek-menu ul {
+/* .cabtek-menu ul {
   display: flex;
   background: #323a45;
   width: 100%;
@@ -144,17 +144,17 @@ HEADER
 
 .cabtek-menu a:hover {
   background: #e74c3c;
-}
+} */
 /* END OF CABTEK */
-.header-second {
+/* .header-second {
   display: flex;
   width: 100%;
   justify-content: space-between;
-}
+} */
 /*
 USER MENU
 */
-.block-login .menu {
+/* .block-login .menu {
   padding: 0.25rem;
   border-bottom: none;
 }
@@ -195,9 +195,9 @@ USER MENU
 
 .block-login .menu .create-account a {
   background-image: url(../images/optimized/icon-user-create-account.png);
-}
+} */
 /*SHOPPING CART*/
-.block-top-cart * {
+/* .block-top-cart * {
   margin: 0;
 }
 
@@ -238,7 +238,7 @@ USER MENU
 
 .block-top-cart a:hover {
   background: #34495e;
-}
+} */
 
 #commerce-checkout-form-review
   table.commerce-price-formatted-components
@@ -254,7 +254,7 @@ USER MENU
   display: none;
 }
 
-@media screen and (min-width: 40em) {
+/* @media screen and (min-width: 40em) {
   #page_top .menu a {
     padding: 0.6rem 0.5rem 0.5rem 32px !important;
     line-height: 1.2rem;
@@ -264,45 +264,45 @@ USER MENU
   .block-top-cart .line-item-summary {
     font-size: 1rem;
   }
-}
+} */
 /*
 HEADER THIRD
 */
-.header-third {
+/* .header-third {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-#site-name {
+} */
+/* #site-name {
   font-size: 2.2em;
   line-height: 1.3em;
   font-weight: 300;
   padding: 0 0 0.5em;
   margin: 0;
-}
+} */
 /* TOP SEARCH */
-.header-third .block-views {
+/* .header-third .block-views {
   flex: 1 1 auto;
   max-width: 480px;
-}
+} */
 .search-top .views-exposed-widgets {
   /* padding-top: 0.25rem; */
-  display: flex;
+  /* display: flex; */
 }
 .search-top .views-exposed-widget {
-  padding: 0.5rem 0 0 0.5rem;
+  /* padding: 0.5rem 0 0 0.5rem; */
 }
 .search-top #edit-search-api-views-fulltext-wrapper,
 .search-top .form-text {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .search-top .form-submit {
-  margin: 0 !important;
+  /* margin: 0 !important; */
 }
 /************ navigation *************/
 
-#navigation {
+/* #navigation {
   background: #323a45;
   display: block;
   margin-top: 1.25rem;
@@ -340,16 +340,16 @@ HEADER THIRD
 .sf-accordion-toggle a {
   font-weight: bold;
   font-size: 2rem;
-}
+} */
 
 body .menu li {
-  list-style: none;
+  /* list-style: none; */
 }
 /*
 END OF HEADER
 */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -363,7 +363,7 @@ h1 {
   font-weight: 300;
   padding: 0 0 0.5em;
   margin: 0;
-}
+} */
 
 h2 {
   font-size: 1.75em;

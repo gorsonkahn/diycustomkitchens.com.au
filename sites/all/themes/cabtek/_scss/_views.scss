@@ -1,0 +1,221 @@
+/*
+ |--------------------------------------------------------------------------
+ | Views
+ |--------------------------------------------------------------------------
+*/
+
+#header-region .form-submit {
+  margin: 0;
+}
+
+.view-commerce-message-messages {
+  margin: 1em 0;
+}
+
+.view .pager {
+  margin: 2rem 0.5rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li {
+    margin: 0 0.25rem;
+    padding: 0;
+    a {
+      display: block;
+      padding: 0.25rem 0.75rem;
+      font-weight: bold;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+      border: 2px solid #fff;
+      &:hover {
+        border-color: #e74c3c;
+        // background-color: #e74c3c;
+        color: #e74c3c;
+      }
+    }
+    .pager-first,
+    .pager-last {
+      display: none;
+    }
+  }
+  .pager-current {
+    margin: 0 0.75rem;
+  }
+  .pager-previous a,
+  .pager-next a {
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: center;
+    height: 2rem;
+    width: 2rem;
+  }
+  .pager-previous a {
+    background-image: url(../images/optimized/pager-left.png);
+  }
+  .pager-next a {
+    background-image: url(../images/optimized/pager-right.png);
+  }
+}
+
+/*
+  CART VIEWS
+  */
+.view-commerce-cart-form .views-field-nothing {
+  img {
+    height: 3.25rem;
+    float: left;
+    margin: 0 0.25rem 0.2rem 0;
+    width: auto;
+    border: 1px solid #f7f7f7;
+  }
+  span {
+    font-size: 0.85rem;
+    background: #f7f7f7;
+    float: left;
+    padding: 0 0.25rem;
+    margin: 0 0.2rem 0.2rem 0;
+  }
+}
+
+.cart-footer {
+  border-radius: 4px;
+  text-align: right;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background: #bbee77 url(../images/optimized/icon-warning.png) no-repeat left
+    top;
+  background-size: 3rem;
+}
+
+.views-table.cols-6 td {
+  vertical-align: middle;
+}
+
+/*
+PRODUCTS AND ALL PRODUCTS VIEWS
+*/
+.view-collection-products {
+  clear: right;
+  .view-content h3 {
+    display: none;
+  }
+}
+.product-view .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.product-view-item {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.12);
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  margin: 0 0.2em 0.5em 0.2rem;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  width: 47.5%;
+  img {
+    width: 100%;
+    height: auto;
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  article {
+    height: 100%;
+    & > div {
+      padding: 1.5rem 1rem 0.5rem 1rem;
+      display: flex;
+      flex-flow: column nowrap;
+      position: relative;
+    }
+    .field-name-field-product-category {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+.node-156-product-commerce-price-wrapper {
+  margin-top: auto;
+}
+
+.field-name-field-product-category {
+  font-size: 0.7rem;
+  float: right;
+  .field-item {
+    display: inline-block;
+    background: rgba(246, 246, 246, 1);
+    color: #666;
+    padding: 0 0.3rem;
+    margin-left: 0.5rem;
+  }
+}
+.product-view-item h2 {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 45em) {
+  .product-view-item {
+    width: 24%;
+    h2 {
+      font-size: 1.3rem;
+    }
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/*
+VIEW MATERIALS
+*/
+.view-materials .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    width: 50%;
+    flex: 0 1 auto;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    border: 2px solid #fff;
+    background: #fff;
+    &:hover {
+      transform: scale(1.1);
+      z-index: 100;
+      font-size: 105%;
+    }
+    a {
+      display: block;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  span {
+    line-height: 1.25rem;
+    padding: 0 0.25rem;
+    display: block;
+    height: 4rem;
+    em {
+      font-weight: normal;
+    }
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .view-materials .view-content div {
+    width: 20%;
+    font-size: 0.9rem;
+  }
+}

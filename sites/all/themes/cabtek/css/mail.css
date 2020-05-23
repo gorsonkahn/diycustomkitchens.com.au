@@ -1,20 +1,17 @@
-/* CSS Document */
-
-
+/* MAIL CSS Document */
 #main {
-	color:#444
+  color: #444;
 }
-
 h1 {
-	display:inline-block;
-	background:#e74c3;
-	padding:1rem;
-	border: 10px solid #e74c3 !important
+  display: inline-block;
+  background: #e74c3;
+  padding: 1rem;
+  border: 10px solid #e74c3 !important;
 }
 .view-order-status a {
-	display:inline-block;
-	padding:6px 12px;
-	text-decoration:none;
-	background:#006699;
-	color:#fff
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  background: #006699;
+  color: #fff;
 }

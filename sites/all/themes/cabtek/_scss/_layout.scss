@@ -1,46 +1,10 @@
-/* html {
-  box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-} */
-
 /*
- HEADER REGION
- */
+ |--------------------------------------------------------------------------
+ | Layout
+ |--------------------------------------------------------------------------
+*/
 
-/* #site-name {
-  font-size: 2.2em;
-  line-height: 1.3em;
-  font-weight: 300;
-}
-
-#logo {
-  margin-top: 0.5em;
-  width: 100%;
-  display: block;
-  color: #e74c3c;
-}
-
-a#logo span {
-  font-size: 64px;
-  font-weight: bold;
-  color: #e74c3c;
-}
-
-#logo #logo-sub {
-  font-size: 32px;
-  display: inline-block;
-  font-weight: normal;
-} */
-
-/*
-END OF HEADER
- */
-/* .container {
+.container {
   max-width: 78rem;
   margin: 0 auto;
   width: auto;
@@ -68,15 +32,16 @@ END OF HEADER
     margin-bottom: 2rem;
   }
 
-  .no-sidebars #content {
-    float: left;
-    display: block;
-    margin-right: 3.22581%;
-    width: 100%;
-  }
-
-  .no-sidebars #content:last-child {
-    margin-right: 0;
+  .no-sidebars {
+    #content {
+      float: left;
+      display: block;
+      margin-right: 3.22581%;
+      width: 100%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   .flex-wrapper {
@@ -96,10 +61,9 @@ END OF HEADER
     display: block;
     margin-right: 2.12766%;
     width: 100%;
-  }
-
-  .no-sidebars #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -117,10 +81,9 @@ END OF HEADER
     display: block;
     margin-right: 3.22581%;
     width: 74.19355%;
-  }
-
-  .one-sidebar.sidebar-second #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -130,13 +93,11 @@ END OF HEADER
     display: block;
     margin-right: 2.12766%;
     width: 65.95745%;
-  }
-
-  .one-sidebar.sidebar-second #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
-
 .one-sidebar.sidebar-first #content {
   width: 100%;
 }
@@ -148,10 +109,9 @@ END OF HEADER
     margin-right: 3.22581%;
     width: 74.19355%;
     margin-left: 25.80645%;
-  }
-
-  .one-sidebar.sidebar-first #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -162,10 +122,9 @@ END OF HEADER
     margin-right: 2.12766%;
     width: 74.46809%;
     margin-left: 25.53191%;
-  }
-
-  .one-sidebar.sidebar-first #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -180,10 +139,9 @@ END OF HEADER
     margin-right: 3.22581%;
     width: 48.3871%;
     margin-left: 25.80645%;
-  }
-
-  .two-sidebars #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -194,10 +152,9 @@ END OF HEADER
     margin-right: 2.12766%;
     width: 40.42553%;
     margin-left: 25.53191%;
-  }
-
-  .two-sidebars #content:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -213,14 +170,12 @@ END OF HEADER
     width: 22.58065%;
     margin-left: -77.41935%;
     padding-top: 1rem;
-  }
-
-  #sidebar-first:last-child {
-    margin-right: 0;
-  }
-
-  .sidebar-first #sidebar-first {
-    margin-left: -103.22581%;
+    &:last-child {
+      margin-right: 0;
+    }
+    #sidebar-first {
+      margin-left: -103.22581%;
+    }
   }
 }
 
@@ -231,14 +186,12 @@ END OF HEADER
     margin-right: 2.12766%;
     width: 23.40426%;
     margin-left: -68.08511%;
-  }
-
-  #sidebar-first:last-child {
-    margin-right: 0;
-  }
-
-  .sidebar-first #sidebar-first {
-    margin-left: -102.12766%;
+    &:last-child {
+      margin-right: 0;
+    }
+    #sidebar-first {
+      margin-left: -102.12766%;
+    }
   }
 }
 
@@ -254,10 +207,9 @@ END OF HEADER
     width: 22.58065%;
     margin-left: 0%;
     padding-top: 1rem;
-  }
-
-  #sidebar-second:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -268,9 +220,8 @@ END OF HEADER
     margin-right: 2.12766%;
     width: 31.91489%;
     margin-left: 0%;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-
-  #sidebar-second:last-child {
-    margin-right: 0;
-  }
-} */
+}
