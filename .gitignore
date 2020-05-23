@@ -43,6 +43,7 @@ xmlrpc.php
 !/profiles/commerce_kickstart/modules/
 /scripts
 /themes
+.vscode
 
 sites/all/modules/*/_notes*
 sites/all/modules/*/*/_notes*
