@@ -13,12 +13,15 @@
     <div class="container">
       <?php if ($page['header_second']): ?>
         <div class="header-second">
-            <?php print render($page['header_second']); ?>
-      </div>
+          <?php print render($page['header_second']); ?>
+        </div>
       <?php endif; ?>
 
       <?php if ($page['header_third']): ?>
         <div class="header-third">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
+          </a>
           <?php print render($page['header_third']); ?>
         </div>
       <?php endif; ?>

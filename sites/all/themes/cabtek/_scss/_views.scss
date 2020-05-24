@@ -4,92 +4,84 @@
  |--------------------------------------------------------------------------
 */
 
-#header-region .form-submit {
-  margin: 0;
-}
-
 .view-commerce-message-messages {
   margin: 1em 0;
 }
 
-.view .pager {
-  margin: 2rem 0.5rem 0 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  li {
-    margin: 0 0.25rem;
-    padding: 0;
-    a {
-      display: block;
-      padding: 0.25rem 0.75rem;
-      font-weight: bold;
-      border-radius: 0.25rem;
-      transition: all 0.3s ease;
-      border: 2px solid #fff;
-      &:hover {
-        border-color: #e74c3c;
-        // background-color: #e74c3c;
-        color: #e74c3c;
+.view {
+  .pager {
+    margin: 2rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 0 0.25rem;
+      padding: 0;
+      a {
+        display: block;
+        padding: 0.25rem 0.75rem;
+        font-weight: bold;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+        border: 2px solid #fff;
+        &:hover {
+          border-color: #e74c3c;
+          // background-color: #e74c3c;
+          color: #e74c3c;
+        }
+      }
+      .pager-first,
+      .pager-last {
+        display: none;
       }
     }
-    .pager-first,
-    .pager-last {
-      display: none;
+    .pager-current {
+      margin: 0 0.75rem;
     }
-  }
-  .pager-current {
-    margin: 0 0.75rem;
-  }
-  .pager-previous a,
-  .pager-next a {
-    background-repeat: no-repeat;
-    background-size: 45%;
-    background-position: center;
-    height: 2rem;
-    width: 2rem;
-  }
-  .pager-previous a {
-    background-image: url(../images/optimized/pager-left.png);
-  }
-  .pager-next a {
-    background-image: url(../images/optimized/pager-right.png);
+    .pager-previous a,
+    .pager-next a {
+      background-repeat: no-repeat;
+      background-size: 45%;
+      background-position: center;
+      height: 2rem;
+      width: 2rem;
+    }
+    .pager-previous a {
+      background-image: url(../images/optimized/pager-left.png);
+    }
+    .pager-next a {
+      background-image: url(../images/optimized/pager-right.png);
+    }
   }
 }
 
 /*
   CART VIEWS
   */
-.view-commerce-cart-form .views-field-nothing {
-  img {
-    height: 3.25rem;
-    float: left;
-    margin: 0 0.25rem 0.2rem 0;
-    width: auto;
-    border: 1px solid #f7f7f7;
+.view-commerce-cart-form {
+  .views-field-nothing {
+    img {
+      height: 3.25rem;
+      float: left;
+      margin: 0 0.25rem 0.2rem 0;
+      width: auto;
+      border: 1px solid #f7f7f7;
+    }
+    span {
+      font-size: 0.85rem;
+      background: #f7f7f7;
+      float: left;
+      padding: 0 0.25rem;
+      margin: 0 0.2rem 0.2rem 0;
+    }
   }
-  span {
-    font-size: 0.85rem;
-    background: #f7f7f7;
-    float: left;
-    padding: 0 0.25rem;
-    margin: 0 0.2rem 0.2rem 0;
+  .cart-footer {
+    padding-left: 4rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    background: url(../images/optimized/icon-warning.png) no-repeat left top;
+    background-size: 3rem;
   }
-}
-
-.cart-footer {
-  border-radius: 4px;
-  text-align: right;
-  padding: 0.5rem 0.5rem 0.5rem 3rem;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  background: #bbee77 url(../images/optimized/icon-warning.png) no-repeat left
-    top;
-  background-size: 3rem;
-}
-
-.views-table.cols-6 td {
-  vertical-align: middle;
 }
 
 /*
@@ -218,4 +210,45 @@ VIEW MATERIALS
     width: 20%;
     font-size: 0.9rem;
   }
+}
+
+.colorbox-mat {
+  background: #323a45;
+  box-sizing: border-box;
+  padding: 0 0 0 0.5rem;
+  color: #fff;
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.25rem;
+  }
+  .colorbox-mat-row {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 0.5rem 0.75rem 0;
+    .colorbox-mat-row-item {
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      span {
+        display: block;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .colorbox-mat .colorbox-mat-row {
+    width: 20%;
+  }
+}
+
+.grid-item {
+  background-image: linear-gradient(-45deg, #323a45, #3b4552);
+  padding: 0 1rem 1rem 1rem;
+  color: #fff;
 }

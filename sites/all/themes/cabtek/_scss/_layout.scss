@@ -11,7 +11,7 @@
 }
 
 #content {
-  padding: 1.5rem 1rem 3rem 1rem;
+  padding: 0 1rem;
   min-height: 20rem;
 }
 
@@ -224,4 +224,22 @@
       margin-right: 0;
     }
   }
+}
+
+@media screen and (min-width: 40em) {
+  .section-products #content-area article {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .grid-14 {
+      width: 49%;
+    }
+    .grid-8 {
+      width: 49%;
+    }
+  }
+}
+
+.grid-24 {
+  width: 100%;
 }
