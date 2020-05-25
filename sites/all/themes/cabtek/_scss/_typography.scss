@@ -82,14 +82,15 @@ a.btn:visited {
   color: #fff;
   padding: 10px 18px;
   border-radius: 0.25rem;
+  &:hover {
+    background: #323a45;
+  }
 }
-
-a.btn:hover {
-  background: #323a45;
-}
-
-.btn.btn-sm {
+.btn-sm {
   padding: 0.25rem;
+}
+.btn-lg {
+  font-size: 1.25rem;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -149,6 +150,8 @@ sub {
 
 img {
   border: 0;
+  width: 100%;
+  height: auto;
 }
 svg:not(:root) {
   overflow: hidden;
