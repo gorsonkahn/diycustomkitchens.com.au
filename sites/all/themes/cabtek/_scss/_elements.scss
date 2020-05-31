@@ -398,38 +398,6 @@ div.status {
   display: none;
 }
 
-/*
-ADD TO CART CONFIRMATION MESSAGE
-*/
-// div.commerce_add_to_cart_confirmation_overlay {
-//   z-index: 9999;
-// }
-
-// div.messages.commerce-add-to-cart-confirmation {
-//   border: none;
-//   -webkit-border-radius: 0;
-//   -moz-border-radius: 0;
-//   border-radius: 0;
-//   -moz-box-shadow: 0 2px 15px #57595a;
-//   -webkit-box-shadow: 0 2px 15px #57595a;
-//   box-shadow: 0 2px 15px #57595a;
-//   color: #323a45;
-//   overflow: visible;
-//   padding: 0;
-//   position: absolute;
-//   z-index: 201;
-//   top: 25%;
-//   left: 0;
-//   right: 0;
-//   margin: 0 auto !important;
-// }
-
-// div.messages.commerce-add-to-cart-confirmation
-//   .view-confirm-message-product-display {
-//   padding: 0;
-//   width: 50%;
-// }
-
 div.messages.commerce-add-to-cart-confirmation {
   border: none;
   color: #4a4a4a;
@@ -511,6 +479,89 @@ FLEXSLIDER
   font-size: 2rem;
   font-weight: normal;
 }
+// GALLERY
+#colorbox {
+  #cboxWrapper {
+    border: none;
+    background: none;
+
+    #cboxContent {
+      background: none;
+      #cboxTopLeft,
+      #cboxTopCenter,
+      #cboxTopRight,
+      #cboxMiddleLeft,
+      #cboxMiddleRight,
+      #cboxBottomLeft,
+      #cboxBottomCenter,
+      #cboxBottomRight,
+      #cboxCurrent {
+        display: none !important;
+      }
+      #cboxLoadedContent {
+        background: none;
+        position: relative;
+
+        img.cboxPhoto {
+          border-radius: 4px;
+        }
+      }
+      #cboxPrevious,
+      #cboxNext {
+        width: 32px;
+        height: 32px;
+        bottom: 40px;
+        background: url(../images/optimized/icon_nav_left.png) no-repeat;
+        background-size: cover;
+        opacity: 0.5;
+      }
+      #cboxPrevious:hover,
+      #cboxNext:hover {
+        opacity: 1;
+      }
+      #cboxNext {
+        background-image: url(../images/optimized/icon_nav_right.png);
+        left: auto;
+        right: 0;
+      }
+      #cboxClose {
+        top: 4px;
+        right: 4px;
+        width: 32px;
+        height: 32px;
+        background: url(../images/optimized/icon-close-128.png) no-repeat;
+        background-size: contain;
+        opacity: 0.5;
+      }
+      #cboxClose:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.field-name-field-gallery-image {
+  .field-items {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .field-item {
+      flex: 1 1 auto;
+      padding: 0.25rem;
+      opacity: 0.85;
+      transition: all ease 0.2s;
+      &:hover {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    }
+  }
+}
 /*
 CHECKOUT PROCESS
 */
@@ -560,3 +611,7 @@ fieldset.checkout-buttons {
 /*
 END - CHECKOUT PROCESS
 */
+
+.field-name-body {
+  margin-bottom: 4rem;
+}

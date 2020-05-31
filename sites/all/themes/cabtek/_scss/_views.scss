@@ -252,3 +252,30 @@ VIEW MATERIALS
   padding: 0 1rem 1rem 1rem;
   color: #fff;
 }
+
+.view-testimonials {
+  padding: 3rem 0 6rem 0;
+  text-align: center;
+  p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin: 1rem 3rem;
+    span {
+      color: #ccc;
+      margin: 0 0.5rem;
+    }
+  }
+  .flexslider {
+    .flex-direction-nav {
+      .flex-prev {
+        left: -2rem;
+      }
+      .flex-next {
+        right: -2rem;
+      }
+    }
+    .flex-control-nav {
+      bottom: -3rem;
+    }
+  }
+}

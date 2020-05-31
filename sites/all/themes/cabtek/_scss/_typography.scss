@@ -18,6 +18,7 @@ h2 {
   font-size: 1.75em;
   font-weight: 300;
   margin: 1.5rem 0 0.8rem 0;
+  line-height: normal;
 }
 
 h3 {
@@ -83,14 +84,15 @@ a.btn:visited {
   padding: 10px 18px;
   border-radius: 0.25rem;
   &:hover {
-    background: #323a45;
+    background: #3b536b;
   }
 }
-.btn-sm {
+a.btn-sm {
   padding: 0.25rem;
 }
-.btn-lg {
+a.btn-lg {
   font-size: 1.25rem;
+  padding: 1rem 2rem;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -150,8 +152,6 @@ sub {
 
 img {
   border: 0;
-  width: 100%;
-  height: auto;
 }
 svg:not(:root) {
   overflow: hidden;

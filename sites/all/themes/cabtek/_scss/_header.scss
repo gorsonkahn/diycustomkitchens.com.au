@@ -36,68 +36,72 @@
 .header-second {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 0.5rem;
   .block-login {
     .menu {
-      padding: 0.5rem 0.25rem 0.25rem 0.35rem;
       border-bottom: none;
       display: flex;
+      @media screen and (max-width: $md) {
+        padding-left: 0;
+      }
       li {
         list-style: none;
         a {
-          color: #fff;
-          background: #3b536b;
           font-weight: bold;
           text-transform: none;
           display: block;
-          padding: 0rem 0.75rem;
-          margin-right: 2px;
-          border-radius: 4px;
+          padding: 0.5rem;
           font-size: 0.85rem;
+          text-decoration: underline;
           &:hover {
-            background: #263545;
-            color: #fff;
+            text-decoration: none;
           }
         }
       }
     }
   }
   .block-top-cart {
+    // margin: 0.25rem 1 0 1rem;
+    padding: 0.25rem;
     * {
       margin: 0;
     }
-    line-height: 2.5rem;
+    line-height: 2rem;
     .view-footer {
       display: flex;
       justify-content: flex-end;
     }
     .line-item-quantity {
-      background: url(../images/optimized/shopping-cart-2-128.png) no-repeat
-        left;
-      background-size: 30%;
-      padding-left: 30px;
-      margin-right: 10px;
+      .line-item-quantity-raw {
+        font-weight: bold;
+      }
+      margin-right: 0.25rem;
     }
-    .line-item-summary div {
-      float: none;
-      display: inline-block;
-      margin-right: 0.5rem;
+    .line-item-summary {
+      display: flex;
+      .line-item-total {
+        margin-right: 1rem;
+      }
+      .links {
+        display: flex;
+      }
     }
     a {
       color: #fff;
       background: #e74c3c;
+      background: #e74c3c url(../images/optimized/shopping-cart-64.png)
+        no-repeat right 0.5rem center;
+      background-size: 1.5rem;
       display: block;
-      padding: 0.5rem 0.5rem 0 0.5rem;
+      padding: 0.25rem 2.25rem 0.25rem 1rem;
       font-weight: bold;
       line-height: 1.5rem;
       text-align: center;
-      border-radius: 0 0 4px 4px;
+      border-radius: 4px;
       &:hover {
         background: #34495e;
-      }
-      span {
-        font-weight: normal;
-        font-size: 90%;
       }
     }
   }
@@ -105,8 +109,9 @@
 
 .header-third {
   width: 100%;
-  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   #logo {
     margin: 0.25rem;
@@ -118,6 +123,9 @@
       font-size: 1.25rem;
       .views-exposed-widget {
         padding: 0.5rem 0 0 0.5rem;
+        .form-text {
+          // min-width: 300px;
+        }
       }
       .form-submit {
         margin: 0 !important;
