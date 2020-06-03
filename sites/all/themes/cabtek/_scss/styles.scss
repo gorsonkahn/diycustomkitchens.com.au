@@ -102,7 +102,7 @@ h1.title {
     }
   }
   .section-2 {
-    background: #e74c3c;
+    background: $red;
     min-height: 23vh;
     .steps {
       display: flex;
@@ -155,7 +155,7 @@ h1.title {
   .section-6 {
     color: #eee;
     text-align: center;
-    background: #323a45;
+    background: $grey;
     padding: 4rem;
     h3 {
       margin: 2rem 4rem;

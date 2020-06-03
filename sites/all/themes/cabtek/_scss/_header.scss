@@ -12,7 +12,7 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-      background: #323a45;
+      background: $grey;
       width: 100%;
       padding-bottom: 4px;
       li {
@@ -27,7 +27,7 @@
         display: block;
         border-radius: 4px;
         &:hover {
-          background: #e74c3c;
+          background: $red;
         }
       }
     }
@@ -63,7 +63,6 @@
     }
   }
   .block-top-cart {
-    // margin: 0.25rem 1 0 1rem;
     padding: 0.25rem;
     * {
       margin: 0;
@@ -90,9 +89,8 @@
     }
     a {
       color: #fff;
-      background: #e74c3c;
-      background: #e74c3c url(../images/optimized/shopping-cart-64.png)
-        no-repeat right 0.5rem center;
+      background: $red url(../images/optimized/shopping-cart-64.png) no-repeat
+        right 0.5rem center;
       background-size: 1.5rem;
       display: block;
       padding: 0.25rem 2.25rem 0.25rem 1rem;
@@ -109,7 +107,7 @@
 
 .header-third {
   width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -139,7 +137,7 @@
 }
 
 #navigation {
-  background: #323a45;
+  background: $grey;
   margin-top: 0.5rem;
   display: block;
   height: 3rem;
@@ -149,14 +147,14 @@
     }
   }
   a {
-    background: #323a45;
+    background: $grey;
     color: #fff;
     padding: 0.25rem 1rem;
     display: block;
     line-height: 2.5rem;
 
     &:hover {
-      background: #e74c3c;
+      background: $red;
     }
     .sf-sub-indicator {
       right: 0.5rem;
@@ -184,7 +182,7 @@
 }
 
 #page_top {
-  border-top: 3px solid #e74c3c;
+  border-top: 3px solid $red;
   border-bottom: 1px solid #e2e6e7;
   .container {
     width: 100%;
