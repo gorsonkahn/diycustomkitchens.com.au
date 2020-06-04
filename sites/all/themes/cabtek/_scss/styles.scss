@@ -76,13 +76,9 @@ h1.title {
       @media screen and (min-width: $md) {
         max-width: 45%;
       }
-      h2 {
-        // margin-top: 0;
-      }
     }
   }
   .section-1 {
-    // background: url(../images/optimized/front_01.jpg) no-repeat center;
     background: url(../images/optimized/front_01.png) no-repeat center;
     background-size: cover;
     min-height: 60vh;
