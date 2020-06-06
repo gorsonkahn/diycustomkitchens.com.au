@@ -192,6 +192,7 @@ a.btn-sm {
 a.btn-lg {
   font-size: 1.25rem;
   padding: 1rem 2rem;
+  display: inline-block;
 }
 
 abbr[title] {
@@ -591,6 +592,31 @@ legend {
   text-decoration: none;
 }
 
+.header-second .block-telephone p {
+  background: #e74c3c;
+  color: #eee;
+  margin: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.header-second .block-telephone p span {
+  font-size: 1.25rem;
+  margin: 0 0.25rem;
+  display: inline-block;
+}
+
+.header-second .block-telephone p a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.header-second .block-telephone p a:hover {
+  text-decoration: underline;
+}
+
 .header-second .block-top-cart {
   padding: 0.25rem;
   line-height: 2rem;
@@ -680,6 +706,10 @@ legend {
   margin-top: 0.5rem;
   display: block;
   height: 3rem;
+}
+
+#navigation li {
+  z-index: 500;
 }
 
 #navigation li .menuparent {
@@ -1527,7 +1557,7 @@ video {
 
 div.messages {
   z-index: 10000 !important;
-  margin: 0.2rem;
+  margin: 1rem 0;
 }
 
 div.warning {
@@ -1726,6 +1756,18 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .b
   background: #e74c3c;
 }
 
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.checkout a:hover {
+  background: #f55240;
+}
+
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.continue a {
+  background: #323a45 !important;
+}
+
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper .button.continue a:hover {
+  background: #3b4552 !important;
+}
+
 .field-name-commerce-customer-shipping {
   margin-top: 1rem;
 }
@@ -1880,7 +1922,7 @@ CHECKOUT PROCESS
 */
 ol.inline.commerce-checkout-progress {
   color: #999;
-  margin: 2rem 0;
+  margin: 2rem 0 3rem 0;
 }
 
 ol.inline.commerce-checkout-progress li {
@@ -1891,9 +1933,9 @@ ol.inline.commerce-checkout-progress li {
 
 ol.inline.commerce-checkout-progress li.active {
   color: #e74c3c;
-  border-bottom: 1px dashed #e74c3c;
+  border-bottom: 2px solid #e74c3c;
   font-size: 1.75rem;
-  font-weight: 300;
+  font-style: italic;
 }
 
 #content-area fieldset.form-wrapper {
@@ -1938,19 +1980,13 @@ END - CHECKOUT PROCESS
   bottom: 5vh;
   right: 2vw;
   z-index: 1000;
-  text-transform: uppercase;
-  border: 4px solid #fff;
+  border: 6px solid #e74c3c;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  transition: all ease 0.2s;
-}
-
-.cta:hover {
-  transform: scale(1.01);
 }
 
 .cta a {
-  width: 12rem;
-  border: 4px solid #cf4536;
+  width: 9.5rem;
+  border: 4px solid #fff;
   border-radius: 2px;
   display: block;
   background: #cf4536;
@@ -1958,27 +1994,27 @@ END - CHECKOUT PROCESS
 }
 
 .cta a h4 {
-  margin: 0.35rem 0.25rem 0.25rem 0.25rem;
+  margin: 0 0 0.5rem 0;
+  line-height: normal;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .cta a span {
-  background: #fff;
+  padding: 0 1rem;
   display: block;
 }
 
 .cta a span img {
-  width: 100%;
+  width: 90%;
+  margin: 5%;
   transition: all ease 0.5s;
 }
 
 .cta a:hover {
-  background: #323a45;
-  border-color: #323a45;
-}
-
-.cta a:hover img {
-  transform: scale(0.95);
+  background: #e74c3c;
+  border-color: #e74c3c;
 }
 
 @media screen and (max-width: 720px) {
@@ -1991,7 +2027,6 @@ END - CHECKOUT PROCESS
   .cta a h4 {
     font-size: 0.85rem;
     font-weight: normal;
-    margin: 0;
   }
 }
 
@@ -2003,7 +2038,7 @@ END - CHECKOUT PROCESS
   margin-left: -50vw;
   margin-right: -50vw;
   background: #666;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.5rem;
   background: url(../images/optimized/kitchen_01.jpg) center center/cover no-repeat;
 }
 
@@ -2011,7 +2046,7 @@ END - CHECKOUT PROCESS
   text-align: center;
   margin: 0 auto;
   font-size: 5rem;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem 6rem 1rem;
   font-style: italic;
   font-weight: 700;
   line-height: normal;
@@ -2035,31 +2070,56 @@ END - CHECKOUT PROCESS
 }
 
 .title-products {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-how-it-works {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-free-planner {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-why-us {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-gallery {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-materials {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
 .title-about {
-  background-image: url(../images/optimized/how_to/howto02.jpg);
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
+}
+
+.title-factory {
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
+}
+
+.how-works {
+  display: flex;
+  margin: 2rem 0;
+  align-items: flex-start;
+}
+
+.how-works img {
+  flex: 1 1 auto;
+  width: 25%;
+}
+
+.how-works div {
+  width: 75%;
+  flex: 1 1 auto;
+  padding: 0.5rem 0 0 2rem;
+}
+
+.how-works div h2 {
+  margin-top: 0;
 }
 
 /*
@@ -2217,13 +2277,13 @@ h1.title {
   }
 }
 
-.front .section-1 {
+.front .section-hero-banner {
   background: url(../images/optimized/front_01.png) no-repeat center;
   background-size: cover;
   min-height: 60vh;
 }
 
-.front .section-1 .section-title {
+.front .section-hero-banner .section-title {
   background: rgba(0, 0, 0, 0.65);
   position: absolute;
   bottom: 5%;
@@ -2232,26 +2292,26 @@ h1.title {
   padding: 0 1rem;
 }
 
-.front .section-1 .section-title h2 {
+.front .section-hero-banner .section-title h2 {
   color: #fff;
   text-transform: uppercase;
   margin: 2rem auto;
   max-width: 60rem;
 }
 
-.front .section-2 {
+.front .section-steps {
   background: #e74c3c;
   min-height: 23vh;
 }
 
-.front .section-2 .steps {
+.front .section-steps .steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1rem 1rem 0 1rem;
 }
 
-.front .section-2 .steps div {
+.front .section-steps .steps div {
   margin: 1rem;
   color: #fff;
   text-align: center;
@@ -2259,73 +2319,104 @@ h1.title {
   flex: 1 1 auto;
 }
 
-.front .section-2 .steps div img {
+.front .section-steps .steps div img {
   max-height: 4rem;
 }
 
-.front .section-2 .steps div h3 {
+.front .section-steps .steps div h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.front .section-2 .steps div h3 span {
+.front .section-steps .steps div h3 span {
   width: 100%;
   font-size: 0.85em;
   font-weight: normal;
   display: block;
 }
 
-.front .section-3 {
+.front .section-guarantee {
   text-align: center;
   padding: 4rem 1rem 1rem 1rem;
 }
 
-.front .section-4 {
+.front .section-begin {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  background: #eee;
+}
+
+.front .section-begin .container {
+  display: flex;
+}
+
+.front .section-begin .container img {
+  flex: 1 1 auto;
+  width: auto;
+  margin: 2rem;
+}
+
+.front .section-begin .container div {
+  flex: 1 1 auto;
+  width: 60%;
+  text-align: left;
+  padding: 2rem;
+}
+
+.front .section-gallery {
   margin-top: 3rem;
   text-align: center;
 }
 
-.front .section-4 .full-width {
+.front .section-gallery .full-width {
   background: url(../images/optimized/front_01.jpg) no-repeat center;
   background-size: cover;
-  min-height: 50vh;
+  height: 50vh;
 }
 
-.front .section-4 .full-width a {
+@media screen and (max-width: 720px) {
+  .front .section-gallery .full-width {
+    height: 25vh;
+  }
+}
+
+.front .section-gallery .full-width a {
   display: block;
   width: 100%;
-  height: 40vh;
+  height: 100%;
+  background: center center/4rem no-repeat rgba(0, 0, 0, 0);
 }
 
-.front .section-5 {
-  padding: 6rem 0;
+.front .section-gallery .full-width a:hover {
+  background-image: url(../images/optimized/icon-select.svg);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
-.front .section-6 {
+.front .section-tour {
   color: #eee;
   text-align: center;
   background: #323a45;
   padding: 4rem;
 }
 
-.front .section-6 h3 {
+.front .section-tour h3 {
   margin: 2rem 4rem;
 }
 
-.front .section-7 {
+.front .section-materials {
   padding: 0 0 6rem 0;
 }
 
 ul.list-tick {
   column-count: 2;
-  margin: 1rem;
+  margin: 2rem 1rem;
 }
 
 ul.list-tick li {
   list-style: none;
   background: url(../images/optimized/icon_list_tick.png) no-repeat left;
-  font-size: 1.25rem;
-  line-height: 3rem;
+  font-size: 1.5rem;
+  line-height: 3.25rem;
   padding-left: 3rem;
   margin: 0;
 }
