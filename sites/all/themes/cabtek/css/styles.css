@@ -2337,7 +2337,7 @@ h1.title {
 
 .front .section-guarantee {
   text-align: center;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 3rem 1rem 2rem 1rem;
 }
 
 .front .section-begin {
@@ -2369,7 +2369,7 @@ h1.title {
 }
 
 .front .section-gallery .full-width {
-  background: url(../images/optimized/front_01.jpg) no-repeat center;
+  background: url(../images/optimized/front_gallery.jpg) no-repeat center;
   background-size: cover;
   height: 50vh;
 }
@@ -2389,7 +2389,7 @@ h1.title {
 
 .front .section-gallery .full-width a:hover {
   background-image: url(../images/optimized/icon-select.svg);
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .front .section-tour {
