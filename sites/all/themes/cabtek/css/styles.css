@@ -530,30 +530,37 @@ legend {
   background: #fff;
 }
 
-.header-first .cabtek-menu ul {
+.header-first .block-superfish ul {
   display: flex;
   flex-wrap: wrap;
   background: #323a45;
   width: 100%;
-  padding-bottom: 4px;
+  padding-bottom: 0;
 }
 
-.header-first .cabtek-menu ul li {
+.header-first .block-superfish ul li {
   padding: 0;
-  margin: 4px 0 0 4px;
+  margin: 0;
   list-style: none;
 }
 
-.header-first .cabtek-menu ul a {
+.header-first .block-superfish ul a {
   color: #fff;
-  background: #34495e;
   padding: 0.2rem 0.5rem;
+  line-height: 2rem;
   display: block;
-  border-radius: 4px;
 }
 
-.header-first .cabtek-menu ul a:hover {
+.header-first .block-superfish ul a:hover {
   background: #e74c3c;
+}
+
+.header-first .block-superfish ul a.menuparent {
+  padding-right: 1.5rem;
+}
+
+.header-first .block-superfish ul ul {
+  top: 2.2rem;
 }
 
 .header-second {

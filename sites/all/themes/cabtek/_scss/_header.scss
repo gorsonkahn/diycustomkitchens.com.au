@@ -8,27 +8,34 @@
 }
 .header-first {
   //ADMIN MENU
-  .cabtek-menu {
+
+  .block-superfish {
     ul {
       display: flex;
       flex-wrap: wrap;
       background: $grey;
       width: 100%;
-      padding-bottom: 4px;
+      padding-bottom: 0;
+
       li {
         padding: 0;
-        margin: 4px 0 0 4px;
+        margin: 0;
         list-style: none;
       }
       a {
         color: #fff;
-        background: #34495e;
         padding: 0.2rem 0.5rem;
+        line-height: 2rem;
         display: block;
-        border-radius: 4px;
         &:hover {
           background: $red;
         }
+      }
+      a.menuparent {
+        padding-right: 1.5rem;
+      }
+      ul {
+        top: 2.2rem;
       }
     }
   }
@@ -144,9 +151,6 @@
       font-size: 1.25rem;
       .views-exposed-widget {
         padding: 0.5rem 0 0 0.5rem;
-        .form-text {
-          // min-width: 300px;
-        }
       }
       .form-submit {
         margin: 0 !important;
