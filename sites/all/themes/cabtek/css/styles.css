@@ -103,6 +103,10 @@ h1 {
   margin: 0;
 }
 
+h1.page-title {
+  margin: 4rem 0 1rem 0;
+}
+
 h2 {
   font-size: 1.75em;
   font-weight: 300;
@@ -751,6 +755,7 @@ legend {
 #navigation ul ul {
   text-transform: none;
   top: 3rem;
+  display: none;
 }
 
 #navigation ul ul a {
@@ -2105,6 +2110,10 @@ END - CHECKOUT PROCESS
 }
 
 .title-factory {
+  background-image: url(../images/optimized/heros/kitchen_01.jpg);
+}
+
+.title-products {
   background-image: url(../images/optimized/heros/kitchen_01.jpg);
 }
 
